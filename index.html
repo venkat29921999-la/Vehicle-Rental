@@ -78,31 +78,31 @@
         Stackly puts a fully-insured, freshly-serviced vehicle in your driveway in under 10 minutes.</p>
 
       <div class="hero-search" id="heroSearch">
-        <div class="hs-field">
-          <i class="fa-solid fa-location-crosshairs"></i>
-          <div>
-            <label>Pickup location</label>
-            <input type="text" placeholder="Chennai, Tamil Nadu">
-          </div>
-        </div>
-        <div class="hs-field">
-          <i class="fa-regular fa-calendar"></i>
-          <div>
-            <label>Pickup date</label>
-            <input type="text" placeholder="Sep 18, 10:00 AM">
-          </div>
-        </div>
-        <div class="hs-field">
-          <i class="fa-regular fa-calendar-check"></i>
-          <div>
-            <label>Return date</label>
-            <input type="text" placeholder="Sep 21, 10:00 AM">
-          </div>
-        </div>
-<button type="button" class="hs-submit" onclick="window.location.href='404.html'">
-  <i class="fa-solid fa-magnifying-glass"></i> Find a ride
-</button>
-      </div>
+  <div class="hs-field" id="hsLocationField">
+    <i class="fa-solid fa-location-crosshairs"></i>
+    <div>
+      <label>Pickup location</label>
+      <input type="text" id="hsLocation" placeholder="Chennai, Tamil Nadu">
+    </div>
+  </div>
+  <div class="hs-field" id="hsPickupField">
+    <i class="fa-regular fa-calendar"></i>
+    <div>
+      <label>Pickup date</label>
+      <input type="text" id="hsPickupDate" placeholder="Sep 18, 10:00 AM">
+    </div>
+  </div>
+  <div class="hs-field" id="hsReturnField">
+    <i class="fa-regular fa-calendar-check"></i>
+    <div>
+      <label>Return date</label>
+      <input type="text" id="hsReturnDate" placeholder="Sep 21, 10:00 AM">
+    </div>
+  </div>
+  <button type="button" class="hs-submit" id="hsSubmit">
+    <i class="fa-solid fa-magnifying-glass"></i> Find a ride
+  </button>
+</div>
 
       <div class="hero-tags">
         <span><i class="fa-solid fa-shield-halved"></i> Full insurance</span>
@@ -716,6 +716,35 @@ window.addEventListener("pageshow", function () {
 
   inputs.forEach(input => {
     input.value = "";
+  });
+});
+</script>
+<script>
+document.getElementById('hsSubmit')?.addEventListener('click', function () {
+  const fields = [
+    ['hsLocation', 'hsLocationField'],
+    ['hsPickupDate', 'hsPickupField'],
+    ['hsReturnDate', 'hsReturnField']
+  ];
+
+  let valid = true;
+  fields.forEach(([inputId, fieldId]) => {
+    const input = document.getElementById(inputId);
+    const field = document.getElementById(fieldId);
+    field.classList.remove('hs-invalid');
+    if (!input.value.trim()) {
+      field.classList.add('hs-invalid');
+      valid = false;
+    }
+  });
+
+  if (!valid) return;
+  window.location.href = '404.html';
+});
+
+document.querySelectorAll('#hsLocation, #hsPickupDate, #hsReturnDate').forEach(input => {
+  input.addEventListener('input', () => {
+    input.closest('.hs-field').classList.remove('hs-invalid');
   });
 });
 </script>

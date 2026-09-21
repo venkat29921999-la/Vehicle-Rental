@@ -1791,3 +1791,22 @@ input,textarea,select{font-family:inherit;}
   width:100%;
   justify-content:center;
 }
+
+/* ============ Hero search: red outline on empty required field ============ */
+.hs-field.hs-invalid{
+  border-radius: 12px;
+  box-shadow: inset 0 0 0 1px #e0645f;
+}
+
+
+/* ============ Availability: day chips are clickable ============ */
+.cp-hour-chip{
+  cursor:pointer;
+}
+.cp-hour-chip.cp-active{
+  border-color:var(--accent);
+  transform:translateY(-4px);
+}
+.cp-hour-chip.cp-active span{
+  color:var(--accent);
+}

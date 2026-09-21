@@ -449,5 +449,16 @@ window.addEventListener("pageshow", function () {
   cpForm.reset();
 });
 </script>
+<script>
+document.querySelectorAll('.cp-hour-chip').forEach(chip => {
+  chip.addEventListener('click', () => {
+    document.querySelectorAll('.cp-hour-chip').forEach(c => {
+      c.classList.remove('cp-active');
+      c.classList.remove('cp-today');
+    });
+    chip.classList.add('cp-active');
+  });
+});
+</script>
 </body>
 </html>
