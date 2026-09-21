@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Stackly — Talk to a Real Human, Fast</title>
+<meta name="description" content="Reach the Stackly team by phone, email or live chat. Real support, real fast — questions about a booking, corporate account or fleet partnership.">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="page-contact">
+
+<!-- ================= PRELOADER ================= -->
+<div class="preloader" id="preloader">
+  <div class="preloader-logo">
+    <img src="Assest/logo-bone.webp" alt="Stackly">
+  </div>
+  <div class="preloader-bar"><span></span></div>
+</div>
+
+<!-- ================= CUSTOM CURSOR ================= -->
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- ================= HEADER ================= -->
+<header class="site-header" id="siteHeader">
+  <div class="header-inner">
+    <a href="index.html" class="brand" aria-label="Home">
+      <img src="Assest/logo-bone.webp" alt="Stackly logo" class="logo-img">
+    </a>
+
+    <nav class="main-nav" id="mainNav">
+      <ul>
+        <li><a href="index.html" class="nav-link" data-nav="home">Home</a></li>
+        <li><a href="about.html" class="nav-link" data-nav="about">About</a></li>
+        <li><a href="services.html" class="nav-link" data-nav="services">Services</a></li>
+        <li><a href="blog.html" class="nav-link" data-nav="blog">Blog</a></li>
+        <li><a href="contact.html" class="nav-link active" data-nav="contact">Contact</a></li>
+      </ul>
+      <a href="login.html" class="login-btn login-btn-mobile"><i class="fa-solid fa-user"></i> Log In</a>
+    </nav>
+
+    <div class="header-actions">
+      <a href="login.html" class="login-btn"><i class="fa-solid fa-user"></i><span>Log In</span></a>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+<div class="nav-overlay" id="navOverlay"></div>
+
+<main>
+
+<!-- ================= 1. HERO — split-flap departure board + cursor-revealed route map + radar tilt-chips ================= -->
+<section class="cp-hero" id="cp-hero">
+  <div class="cp-hero-spotlight" id="cpSpotlight" aria-hidden="true"></div>
+  <div class="cp-hero-routes" id="cpRoutes" aria-hidden="true">
+    <svg viewBox="0 0 800 520" preserveAspectRatio="xMidYMid slice">
+      <path class="cp-route-path" d="M10,440 C160,400 190,220 330,200 S540,80 790,60"></path>
+      <path class="cp-route-path cp-route-2" d="M-10,130 C130,170 270,90 410,150 S660,270 810,230"></path>
+      <path class="cp-route-path cp-route-3" d="M20,300 C180,300 260,360 420,320 S620,200 800,340"></path>
+      <circle class="cp-route-dot" cx="330" cy="200" r="4"></circle>
+      <circle class="cp-route-dot" cx="410" cy="150" r="4"></circle>
+      <circle class="cp-route-dot" cx="420" cy="320" r="4"></circle>
+    </svg>
+  </div>
+
+  <div class="cp-hero-inner">
+    <p class="cp-eyebrow"><i class="fa-solid fa-tower-broadcast"></i> Desk is live — avg reply 4 min</p>
+    <h1 class="cp-hero-title" id="cpFlapTitle">
+      <span class="cp-flap-line" data-flap="Let's talk"></span><br>
+      <span class="cp-flap-line cp-accent" data-flap="cars &amp; routes."></span>
+    </h1>
+    <p class="cp-hero-desc">Booking trouble, a corporate fleet enquiry, or just want to say hi —
+      pick a channel below and a real human on our Chennai desk picks it up.</p>
+
+    <div class="cp-hero-actions">
+      <a href="404.html" class="cp-liquid-btn"><span>Send a message</span></a>
+      <a href="404.html" class="cp-ghost-btn"><i class="fa-solid fa-phone"></i> Call now</a>
+    </div>
+  </div>
+
+ <div class="cp-radar-stage" id="cpRadarStage" aria-hidden="true">
+  <div class="cp-radar-rings">
+    <span></span><span></span><span></span>
+  </div>
+
+  <div class="cp-radar-sweep"></div>
+
+  <div class="cp-radar-core">
+    <i class="fa-solid fa-headset"></i>
+  </div>
+
+  <div class="cp-tilt-chip cp-chip-1" data-tilt onclick="window.location.href='404.html'">
+    <i class="fa-solid fa-phone"></i><span>Call</span>
+  </div>
+
+  <div class="cp-tilt-chip cp-chip-2" data-tilt onclick="window.location.href='404.html'">
+    <i class="fa-solid fa-envelope"></i><span>Email</span>
+  </div>
+
+  <div class="cp-tilt-chip cp-chip-3" data-tilt onclick="window.location.href='404.html'">
+    <i class="fa-brands fa-whatsapp"></i><span>Chat</span>
+  </div>
+
+  <div class="cp-tilt-chip cp-chip-4" data-tilt onclick="window.location.href='404.html'">
+    <i class="fa-solid fa-location-dot"></i><span>Visit</span>
+  </div>
+</div>
+
+  <div class="cp-scroll-hint"><span></span><p>Scroll</p></div>
+</section>
+
+<!-- ================= 2. CHANNELS — paper peel-corner reveal cards ================= -->
+<section class="cp-channels" id="cp-channels">
+  <div class="section-head">
+    <p class="section-kicker">Pick your lane</p>
+    <h2 class="section-title">Three ways to reach the desk</h2>
+  </div>
+
+  <div class="cp-peel-grid">
+    <div class="cp-peel-card">
+      <div class="cp-peel-corner"></div>
+      <i class="fa-solid fa-phone-volume cp-peel-icon"></i>
+      <h3>Call the desk</h3>
+      <p>Mon–Sun, 7am–11pm IST. Fastest for urgent trip issues.</p>
+      <span class="cp-peel-reveal">+91 044 6789 2200</span>
+    </div>
+    <div class="cp-peel-card">
+      <div class="cp-peel-corner"></div>
+      <i class="fa-solid fa-envelope-open-text cp-peel-icon"></i>
+      <h3>Email us</h3>
+      <p>Best for documents, invoices and corporate requests.</p>
+      <span class="cp-peel-reveal">hello@stackly.example</span>
+    </div>
+    <div class="cp-peel-card">
+      <div class="cp-peel-corner"></div>
+      <i class="fa-brands fa-whatsapp cp-peel-icon"></i>
+      <h3>WhatsApp</h3>
+      <p>Send a photo of a scratch, a doc, or just type "help".</p>
+      <span class="cp-peel-reveal">+91 98400 12200</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 3. FORM — draw-in underline fields + flying plane on submit ================= -->
+<section class="cp-form-section" id="cp-form">
+  <div class="cp-form-wrap">
+    <div class="cp-form-side">
+      <p class="section-kicker">Drop a line</p>
+      <h2 class="section-title">Tell us what's going on</h2>
+      <p class="section-desc">Fill this in and it lands straight in our support queue —
+        no bots reading it first.</p>
+      <img src="Assest/cr29.webp"
+        alt="Stackly support desk workspace" class="cp-form-img" loading="lazy" width="480" height="360">
+    </div>
+
+    <form class="cp-form" id="cpContactForm">
+  <div class="cp-form-row">
+    <div class="cp-field">
+      <input type="text" id="cpName" placeholder=" " required>
+      <label for="cpName">Full name</label>
+      <span class="cp-underline"></span>
+    </div>
+
+    <div class="cp-field">
+      <input type="text" id="cpPhone" placeholder=" ">
+      <label for="cpPhone">Phone number</label>
+      <span class="cp-underline"></span>
+    </div>
+  </div>
+
+  <div class="cp-field">
+    <input type="email" id="cpEmail" placeholder=" " required>
+    <label for="cpEmail">Email address</label>
+    <span class="cp-underline"></span>
+  </div>
+
+  <div class="cp-field">
+    <textarea id="cpMessage" rows="4" placeholder=" " required></textarea>
+    <label for="cpMessage">Your message</label>
+    <span class="cp-underline"></span>
+  </div>
+
+  <button type="submit" class="cp-send-btn" id="cpSendBtn">
+    <span class="cp-send-text">Send message</span>
+    <svg class="cp-plane" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+      <path d="M2 12l19-9-5 9 5 9-19-9zm0 0h13"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.6"
+        stroke-linecap="round"
+        stroke-linejoin="round"/>
+    </svg>
+  </button>
+
+  <div class="cp-success" id="cpSuccess">
+    <svg viewBox="0 0 52 52" class="cp-check-ring">
+      <circle cx="26" cy="26" r="24" fill="none"/>
+      <path fill="none" d="M14 27l8 8 16-16"/>
+    </svg>
+    <p>Message sent — we'll reply within the hour.</p>
+  </div>
+</form>
+
+  </div>
+</section>
+
+<!-- ================= 4. LOCATION — live map + radar-pulse pin + address ticker ================= -->
+<section class="cp-location" id="cp-location">
+  <div class="cp-map-media">
+    <iframe
+      class="cp-map-frame"
+      src="https://www.google.com/maps?q=Prestige+Tech+Park+OMR+Chennai&z=15&output=embed"
+      title="Stackly HQ location — OMR Tech Corridor, Chennai"
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      allowfullscreen></iframe>
+
+    <div class="cp-radar-pin">
+      <span class="cp-radar-ring"></span>
+      <span class="cp-radar-ring cp-r2"></span>
+      <i class="fa-solid fa-location-dot"></i>
+    </div>
+
+    <a href="https://www.google.com/maps/search/?api=1&query=Prestige+Tech+Park+OMR+Chennai"
+      target="_blank" rel="noopener" class="cp-map-open">
+      <i class="fa-solid fa-diamond-turn-right"></i> Get directions
+    </a>
+  </div>
+
+  <div class="cp-location-info">
+    <p class="section-kicker">Come say hi</p>
+    <h2 class="section-title">Our home base</h2>
+    <p class="section-desc">Drop by for a fleet walkthrough or a corporate sign-up —
+      coffee's on us.</p>
+    <div class="cp-address-card">
+      <i class="fa-solid fa-building"></i>
+      <div>
+        <h4>Stackly HQ</h4>
+        <p>4th Floor, Prestige Tech Park, OMR Tech Corridor, Chennai, Tamil Nadu 600096</p>
+      </div>
+    </div>
+    <div class="cp-ticker-wrap" aria-hidden="true">
+      <div class="cp-ticker-track">
+        <span>OMR CHENNAI</span><span>•</span><span>OPEN 7 DAYS</span><span>•</span>
+        <span>FREE PARKING</span><span>•</span><span>OMR CHENNAI</span><span>•</span>
+        <span>OPEN 7 DAYS</span><span>•</span><span>FREE PARKING</span><span>•</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 5. AVAILABILITY — pop-in support roster + live pulse status ================= -->
+<section class="cp-availability" id="cp-availability">
+  <div class="section-head cp-center">
+    <p class="section-kicker">Who's answering</p>
+    <h2 class="section-title">The desk is live right now</h2>
+  </div>
+
+  <div class="cp-avail-wrap">
+    <div class="cp-avatar-stack" id="cpAvatarStack">
+      <img data-pop src="Assest/cr30.webp" alt="Support agent" width="70" height="70" loading="lazy">
+      <img data-pop src="Assest/cr31.webp" alt="Support agent" width="70" height="70" loading="lazy">
+      <img data-pop src="Assest/cr32.webp" alt="Support agent" width="70" height="70" loading="lazy">
+      <img data-pop src="Assest/cr33.webp" alt="Support agent" width="70" height="70" loading="lazy">
+      <div class="cp-avatar-more" data-pop>+9</div>
+    </div>
+    <p class="cp-live-status"><span class="cp-live-dot"></span> 6 agents online · avg reply 4 min</p>
+
+    <div class="cp-hours-grid" id="cpHoursGrid">
+      <div class="cp-hour-chip" data-day="Mon"><span>Mon</span><small>7am–11pm</small></div>
+      <div class="cp-hour-chip" data-day="Tue"><span>Tue</span><small>7am–11pm</small></div>
+      <div class="cp-hour-chip" data-day="Wed"><span>Wed</span><small>7am–11pm</small></div>
+      <div class="cp-hour-chip" data-day="Thu"><span>Thu</span><small>7am–11pm</small></div>
+      <div class="cp-hour-chip" data-day="Fri"><span>Fri</span><small>7am–11pm</small></div>
+      <div class="cp-hour-chip" data-day="Sat"><span>Sat</span><small>8am–10pm</small></div>
+      <div class="cp-hour-chip" data-day="Sun"><span>Sun</span><small>8am–10pm</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 6. QUICK ANSWERS — chat-bubble Q&A with typing dots ================= -->
+<section class="cp-chatfaq" id="cp-chatfaq">
+  <div class="section-head">
+    <p class="section-kicker">Before you write in</p>
+    <h2 class="section-title">Quick answers, chat-style</h2>
+  </div>
+
+  <div class="cp-chat-window" id="cpChatWindow">
+    <button class="cp-chat-q" data-q="1">
+      <i class="fa-regular fa-comment-dots"></i> How fast do you reply to email?
+    </button>
+    <div class="cp-chat-a" data-a="1">
+      <div class="cp-typing"><span></span><span></span><span></span></div>
+      <div class="cp-bubble">Usually under 60 minutes during desk hours, and by 9am the next day overnight.</div>
+    </div>
+
+    <button class="cp-chat-q" data-q="2">
+      <i class="fa-regular fa-comment-dots"></i> Can I change my booking over chat?
+    </button>
+    <div class="cp-chat-a" data-a="2">
+      <div class="cp-typing"><span></span><span></span><span></span></div>
+      <div class="cp-bubble">Yes — send your booking ID on WhatsApp and we'll confirm the change in minutes.</div>
+    </div>
+
+    <button class="cp-chat-q" data-q="3">
+      <i class="fa-regular fa-comment-dots"></i> Do you handle corporate accounts here too?
+    </button>
+    <div class="cp-chat-a" data-a="3">
+      <div class="cp-typing"><span></span><span></span><span></span></div>
+      <div class="cp-bubble">Absolutely — pick "Corporate account" in the form above and our B2B lead follows up.</div>
+    </div>
+
+    <button class="cp-chat-q" data-q="4">
+      <i class="fa-regular fa-comment-dots"></i> Is there a number for roadside help?
+    </button>
+    <div class="cp-chat-a" data-a="4">
+      <div class="cp-typing"><span></span><span></span><span></span></div>
+      <div class="cp-bubble">Same desk number, 24/7 for active trips — say "roadside" first thing on the call.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 7. CLOSING CTA — magnetic socials + rotating orbit text ================= -->
+<section class="cp-cta" id="cp-cta">
+  <div class="cp-cta-inner">
+    <div class="cp-cta-orbit" aria-hidden="true">
+      <svg viewBox="0 0 220 220" class="cp-orbit-text-svg">
+        <path id="cpCirclePath" d="M110,110 m-90,0 a90,90 0 1,1 180,0 a90,90 0 1,1 -180,0" fill="none"/>
+        <text>
+          <textPath href="#cpCirclePath">FOLLOW THE ROAD • STAY IN TOUCH • FOLLOW THE ROAD • STAY IN TOUCH • </textPath>
+        </text>
+      </svg>
+      <div class="cp-cta-center"><i class="fa-solid fa-arrow-up-right-dots"></i></div>
+    </div>
+
+    <h2 class="section-title">Not ready to write in?<br>Just follow along.</h2>
+    <div class="cp-magnetic-row" id="cpMagRow">
+      <a href="404.html" class="cp-mag-btn" data-mag><i class="fa-brands fa-instagram"></i></a>
+      <a href="404.html" class="cp-mag-btn" data-mag><i class="fa-brands fa-x-twitter"></i></a>
+      <a href="404.html" class="cp-mag-btn" data-mag><i class="fa-brands fa-linkedin-in"></i></a>
+      <a href="404.html" class="cp-mag-btn" data-mag><i class="fa-brands fa-youtube"></i></a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="site-footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="index.html" class="footer-logo-link" aria-label="Go to homepage">
+        <img src="Assest/logo-bone.webp" alt="Stackly logo" class="footer-logo">
+      </a>
+      <p>Premium, self-serviced vehicle rental across 42 Indian cities. Insured, inspected, instant.</p>
+      <div class="sk-social">
+  <a href="404.html" aria-label="Instagram"><i class="soc-ig"></i></a>
+  <a href="404.html" aria-label="X"><i class="soc-x"></i></a>
+  <a href="404.html" aria-label="LinkedIn"><i class="soc-li"></i></a>
+  <a href="404.html" aria-label="YouTube"><i class="soc-yt"></i></a>
+</div>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="index.html">Home</a>
+      <a href="about.html">About us</a>
+      <a href="services.html">Services</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h4>Fleet</h4>
+      <a href="404.html">Economy</a>
+      <a href="404.html">Luxury Sedan</a>
+      <a href="404.html">SUV &amp; 4x4</a>
+      <a href="404.html">Electric</a>
+    </div>
+    <div class="footer-col">
+      <h4>Newsletter</h4>
+      <p>Route guides &amp; deals, twice a month.</p>
+     <div class="news-input">
+  <input type="email" id="newsEmail" placeholder="Your email" required>
+  <button type="button" onclick="validateAndRedirect()">
+    <i class="fa-solid fa-paper-plane"></i>
+  </button>
+</div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 Stackly Mobility Pvt. Ltd. All rights reserved.</p>
+    <div class="footer-legal"><a href="404.html">Privacy</a><a href="404.html">Terms</a><a href="404.html">Sitemap</a></div>
+  </div>
+</footer>
+
+<button class="back-to-top" id="backToTop"><i class="fa-solid fa-arrow-up"></i></button>
+
+<!-- Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="script.js"></script>
+<script>
+function validateAndRedirect() {
+  const email = document.getElementById("newsEmail");
+
+  if (email.checkValidity()) {
+    window.location.href = "404.html";
+  } else {
+    email.reportValidity();
+  }
+}
+
+// Clear the field when returning to this page
+window.addEventListener("pageshow", function () {
+  document.getElementById("newsEmail").value = "";
+});
+</script>
+<script>
+const cpForm = document.getElementById("cpContactForm");
+
+cpForm.addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  // Validate required fields
+  if (cpForm.checkValidity()) {
+    // Clear all fields before redirect
+    cpForm.reset();
+
+    // Redirect to 404 page
+    window.location.href = "404.html";
+  } else {
+    // Show browser validation messages
+    cpForm.reportValidity();
+  }
+});
+
+// Clear fields when returning to this page
+window.addEventListener("pageshow", function () {
+  cpForm.reset();
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Dashboard — Stackly</title>
+<meta name="robots" content="noindex">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="app.css">
+</head>
+<body class="dash-body" data-role="user">
+
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<div class="dash-overlay" id="dashOverlay"></div>
+
+<div class="dash-shell">
+
+  <!-- ================= SIDEBAR ================= -->
+  <aside class="dash-sidebar" id="dashSidebar">
+    <div class="dash-side-logo">
+     <a href="dashboard-user.html" class="dash-side-logo-link">
+  <img src="Assest/logo-bone.webp" alt="Stackly logo">
+</a>
+      <span class="dash-side-role"><i class="fa-solid fa-user"></i> User</span>
+    </div>
+
+    <nav class="dash-nav">
+      <div class="dash-nav-indicator" id="dashNavIndicator"></div>
+      <a href="#" class="active" data-section="overview" data-label="Overview"><i class="fa-solid fa-gauge-high"></i> Overview</a>
+      <a href="#" data-section="inbox" data-label="Inbox"><i class="fa-solid fa-inbox"></i> Inbox <span class="dash-unread-badge" data-unread-count></span></a>
+      <a href="#" data-section="bookings" data-label="My bookings"><i class="fa-solid fa-calendar-check"></i> My bookings</a>
+      <a href="#" data-section="payments" data-label="Payments"><i class="fa-solid fa-credit-card"></i> Payments</a>
+      <a href="#" data-section="support" data-label="Support"><i class="fa-solid fa-headset"></i> Support</a>
+      <a href="#" data-section="settings" data-label="Settings"><i class="fa-solid fa-gear"></i> Settings</a>
+    </nav>
+
+    <div class="dash-side-foot">
+      <div class="dash-side-user">
+        <div class="dash-avatar-ring"><span data-user-initial>U</span></div>
+        <div>
+          <strong data-user-name>User</strong>
+          <span data-user-email>user@stackly.example</span>
+        </div>
+      </div>
+      <button class="dash-logout" data-logout><i class="fa-solid fa-right-from-bracket"></i> Log out</button>
+    </div>
+  </aside>
+
+  <!-- ================= MAIN ================= -->
+ <div class="dash-main">
+    <header class="dash-topbar">
+      <button class="dash-hamburger" id="dashHamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+      <div class="dash-search">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input
+    type="text"
+    placeholder="Search bookings, customers, vehicles…"
+    onkeydown="if(event.key === 'Enter' && this.value.trim() !== '') window.location.href='404.html'"
+  >
+</div>
+
+      <div class="dash-topbar-right">
+  <button
+    class="dash-bell"
+    aria-label="Notifications"
+    type="button"
+    onclick="window.location.href='404.html'"
+  >
+    <i class="fa-regular fa-bell"></i>
+  </button>
+
+  <div
+    class="dash-topbar-avatar"
+    onclick="window.location.href='404.html'"
+    style="cursor: pointer;"
+  >
+    <span data-user-initial>A</span>
+  </div>
+</div>
+    </header>
+
+    <div class="dash-content">
+      <div class="dash-welcome">
+        <h1>Hey <span data-user-first>there</span>, ready to ride? 🚗</h1>
+        <p>Here's a snapshot of your account.</p>
+      </div>
+
+      <!-- stat cards -->
+      <div class="dash-stats-grid">
+        <div class="dash-stat-card">
+          <span class="dash-stat-trend up"><i class="fa-solid fa-circle-check"></i> Active</span>
+          <div class="dash-stat-icon"><i class="fa-solid fa-car-side"></i></div>
+          <h3 data-count="1">0</h3>
+          <p>Current booking</p>
+          <div class="dash-stat-bar"><span data-pct="45"></span></div>
+        </div>
+        <div class="dash-stat-card">
+          <span class="dash-stat-trend up"><i class="fa-solid fa-arrow-trend-up"></i> +3</span>
+          <div class="dash-stat-icon"><i class="fa-solid fa-route"></i></div>
+          <h3 data-count="27">0</h3>
+          <p>Total trips taken</p>
+          <div class="dash-stat-bar"><span data-pct="72"></span></div>
+        </div>
+        <div class="dash-stat-card">
+          <span class="dash-stat-trend up"><i class="fa-solid fa-star"></i> Gold</span>
+          <div class="dash-stat-icon"><i class="fa-solid fa-crown"></i></div>
+          <h3 data-count="3420">0</h3>
+          <p>Loyalty points</p>
+          <div class="dash-stat-bar"><span data-pct="60"></span></div>
+        </div>
+        <div class="dash-stat-card">
+          <span class="dash-stat-trend up"><i class="fa-solid fa-wallet"></i> Ready</span>
+          <div class="dash-stat-icon"><i class="fa-solid fa-indian-rupee-sign"></i></div>
+          <h3 data-count="2450" data-prefix="₹">0</h3>
+          <p>Wallet balance</p>
+          <div class="dash-stat-bar"><span data-pct="40"></span></div>
+        </div>
+      </div>
+
+      <!-- ---------- OVERVIEW PANEL ---------- -->
+      <section class="dash-panel active" id="panel-overview">
+        <div class="dash-overview-grid">
+          <div class="dash-section-card">
+            <div class="dash-section-head">
+              <div><h2>Recent activity</h2><p>Your bookings and account updates</p></div>
+            </div>
+            <div class="dash-activity-row">
+              <div class="dash-activity-icon"><i class="fa-solid fa-car"></i></div>
+              <div><strong>Active booking — Hyundai Creta</strong><span>Pickup: OMR Chennai · Return in 2 days</span></div>
+              <div class="dash-activity-time">Now</div>
+            </div>
+            <div class="dash-activity-row">
+              <div class="dash-activity-icon"><i class="fa-solid fa-receipt"></i></div>
+              <div><strong>Invoice generated</strong><span>Trip #ST20477 — ₹3,240 charged to your saved card</span></div>
+              <div class="dash-activity-time">2d ago</div>
+            </div>
+            <div class="dash-activity-row">
+              <div class="dash-activity-icon"><i class="fa-solid fa-star"></i></div>
+              <div><strong>You rated a trip 5 stars</strong><span>"Showroom-fresh SUV, smooth handover" — Bengaluru</span></div>
+              <div class="dash-activity-time">5d ago</div>
+            </div>
+            <div class="dash-activity-row">
+              <div class="dash-activity-icon"><i class="fa-solid fa-gift"></i></div>
+              <div><strong>200 loyalty points earned</strong><span>From your last completed trip</span></div>
+              <div class="dash-activity-time">5d ago</div>
+            </div>
+            <div class="dash-activity-row">
+              <div class="dash-activity-icon"><i class="fa-solid fa-shield-halved"></i></div>
+              <div><strong>New login detected</strong><span>Chrome on Windows — Chennai, India</span></div>
+              <div class="dash-activity-time">1w ago</div>
+            </div>
+          </div>
+
+          <div class="dash-section-card">
+            <div class="dash-section-head"><div><h2>Your progress</h2><p>Loyalty &amp; account health</p></div></div>
+            <div class="dash-mini-progress">
+              <div><span>Gold tier progress</span><span>60%</span></div>
+              <div class="bar"><span data-pct="60"></span></div>
+            </div>
+            <div class="dash-mini-progress">
+              <div><span>Profile completeness</span><span>85%</span></div>
+              <div class="bar"><span data-pct="85"></span></div>
+            </div>
+            <div class="dash-mini-progress">
+              <div><span>Documents verified</span><span>100%</span></div>
+              <div class="bar"><span data-pct="100"></span></div>
+            </div>
+            <div class="dash-mini-progress">
+              <div><span>Referral goal (3 of 5)</span><span>60%</span></div>
+              <div class="bar"><span data-pct="60"></span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ---------- INBOX PANEL (dynamic) ---------- -->
+      <section class="dash-panel" id="panel-inbox">
+        <div class="dash-section-card">
+          <div class="dash-section-head">
+            <div><h2>Inbox</h2><p>Rendered dynamically from your message queue</p></div>
+          </div>
+          <div class="dash-inbox-toolbar">
+            <div class="dash-inbox-tabs">
+              <button class="active" data-tab="all">All</button>
+              <button data-tab="unread">Unread</button>
+              <button data-tab="flagged">Flagged</button>
+            </div>
+            <div class="dash-inbox-search">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <input type="text" id="dashInboxSearch" placeholder="Search mail…">
+            </div>
+          </div>
+          <div class="dash-email-list" id="dashEmailList"></div>
+        </div>
+      </section>
+
+      <!-- ---------- MY BOOKINGS PANEL ---------- -->
+      <section class="dash-panel" id="panel-bookings">
+        <div class="dash-section-card">
+          <div class="dash-section-head">
+            <div><h2>My bookings</h2><p>Your current trip and full rental history</p></div>
+          </div>
+          <div class="dash-inbox-toolbar">
+            <div class="dash-inbox-tabs" data-filter-tabs="myBookingsList">
+              <button class="active" data-filter="all">All</button>
+              <button data-filter="active">Active</button>
+              <button data-filter="completed">Completed</button>
+              <button data-filter="cancelled">Cancelled</button>
+            </div>
+          </div>
+          <div class="dash-list" id="myBookingsList">
+            <div class="dash-list-row" data-status="active">
+              <div class="dash-list-icon"><i class="fa-solid fa-car"></i></div>
+              <div class="dash-list-main"><strong>Hyundai Creta</strong><span>Booking #ST20477 · OMR Chennai hub</span></div>
+              <div class="dash-list-meta">18–20 Sep</div>
+              <div class="dash-list-right"><span class="dash-amount">₹3,240</span><span class="dash-badge ok">Active</span></div>
+            </div>
+            <div class="dash-list-row" data-status="completed">
+              <div class="dash-list-icon"><i class="fa-solid fa-car"></i></div>
+              <div class="dash-list-main"><strong>Mahindra XUV700</strong><span>Booking #ST20401 · Bengaluru hub</span></div>
+              <div class="dash-list-meta">2–5 Sep</div>
+              <div class="dash-list-right"><span class="dash-amount">₹6,597</span><span class="dash-badge info">Completed</span></div>
+            </div>
+            <div class="dash-list-row" data-status="completed">
+              <div class="dash-list-icon"><i class="fa-solid fa-car"></i></div>
+              <div class="dash-list-main"><strong>Maruti Baleno</strong><span>Booking #ST20366 · Chennai hub</span></div>
+              <div class="dash-list-meta">14–16 Aug</div>
+              <div class="dash-list-right"><span class="dash-amount">₹1,998</span><span class="dash-badge info">Completed</span></div>
+            </div>
+            <div class="dash-list-row" data-status="completed">
+              <div class="dash-list-icon"><i class="fa-solid fa-car"></i></div>
+              <div class="dash-list-main"><strong>Tata Nexon EV</strong><span>Booking #ST20312 · Coimbatore hub</span></div>
+              <div class="dash-list-meta">22–23 Jul</div>
+              <div class="dash-list-right"><span class="dash-amount">₹1,599</span><span class="dash-badge info">Completed</span></div>
+            </div>
+            <div class="dash-list-row" data-status="cancelled">
+              <div class="dash-list-icon"><i class="fa-solid fa-car"></i></div>
+              <div class="dash-list-main"><strong>Hyundai i20</strong><span>Booking #ST20287 · Chennai hub</span></div>
+              <div class="dash-list-meta">5 Jul</div>
+              <div class="dash-list-right"><span class="dash-amount">₹1,199</span><span class="dash-badge bad">Cancelled</span></div>
+            </div>
+            <div class="dash-list-row" data-status="completed">
+              <div class="dash-list-icon"><i class="fa-solid fa-car"></i></div>
+              <div class="dash-list-main"><strong>Mercedes C-Class</strong><span>Booking #ST20240 · Hyderabad hub</span></div>
+              <div class="dash-list-meta">18–19 Jun</div>
+              <div class="dash-list-right"><span class="dash-amount">₹8,598</span><span class="dash-badge info">Completed</span></div>
+            </div>
+            <div class="dash-list-row" data-status="completed">
+              <div class="dash-list-icon"><i class="fa-solid fa-car"></i></div>
+              <div class="dash-list-main"><strong>Maruti Baleno</strong><span>Booking #ST20198 · Chennai hub</span></div>
+              <div class="dash-list-meta">30 May</div>
+              <div class="dash-list-right"><span class="dash-amount">₹999</span><span class="dash-badge info">Completed</span></div>
+            </div>
+            <div class="dash-list-row" data-status="completed">
+              <div class="dash-list-icon"><i class="fa-solid fa-car"></i></div>
+              <div class="dash-list-main"><strong>Range Rover Evoque</strong><span>Booking #ST20150 · Bengaluru hub</span></div>
+              <div class="dash-list-meta">1–3 May</div>
+              <div class="dash-list-right"><span class="dash-amount">₹17,997</span><span class="dash-badge info">Completed</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ---------- PAYMENTS PANEL ---------- -->
+      <section class="dash-panel" id="panel-payments">
+        <div class="dash-section-card">
+          <div class="dash-section-head"><div><h2>Payment methods</h2><p>Cards and wallets saved to your account</p></div></div>
+          <div class="dash-pay-methods">
+            <div class="dash-pay-card"><i class="fa-brands fa-cc-visa"></i><div><strong>Visa •••• 4417</strong><span>Expires 08/28 · Default</span></div></div>
+            <div class="dash-pay-card"><i class="fa-solid fa-wallet"></i><div><strong>Stackly Wallet</strong><span>₹2,450 available</span></div></div>
+            <div class="dash-pay-card"><i class="fa-brands fa-google-pay"></i><div><strong>UPI · venkat@okhdfc</strong><span>Linked 14 Mar 2024</span></div></div>
+          </div>
+        </div>
+        <div class="dash-section-card">
+          <div class="dash-section-head"><div><h2>Transaction history</h2><p>Every charge and refund on your account</p></div></div>
+          <div class="dash-list">
+            <div class="dash-list-row"><div class="dash-list-icon"><i class="fa-solid fa-receipt"></i></div><div class="dash-list-main"><strong>Hyundai Creta — trip #ST20477</strong><span>Visa •••• 4417</span></div><div class="dash-list-meta">18 Sep</div><div class="dash-list-right"><span class="dash-amount">₹3,240</span><span class="dash-badge ok">Paid</span></div></div>
+            <div class="dash-list-row"><div class="dash-list-icon"><i class="fa-solid fa-gift"></i></div><div class="dash-list-main"><strong>Loyalty points redeemed</strong><span>200 pts → wallet credit</span></div><div class="dash-list-meta">14 Sep</div><div class="dash-list-right"><span class="dash-amount">₹100</span><span class="dash-badge info">Credit</span></div></div>
+            <div class="dash-list-row"><div class="dash-list-icon"><i class="fa-solid fa-receipt"></i></div><div class="dash-list-main"><strong>Mahindra XUV700 — trip #ST20401</strong><span>Visa •••• 4417</span></div><div class="dash-list-meta">2 Sep</div><div class="dash-list-right"><span class="dash-amount">₹6,597</span><span class="dash-badge ok">Paid</span></div></div>
+            <div class="dash-list-row"><div class="dash-list-icon"><i class="fa-solid fa-rotate-left"></i></div><div class="dash-list-main"><strong>Refund — cancelled trip #ST20287</strong><span>Back to Stackly Wallet</span></div><div class="dash-list-meta">5 Jul</div><div class="dash-list-right"><span class="dash-amount">₹1,199</span><span class="dash-badge info">Refunded</span></div></div>
+            <div class="dash-list-row"><div class="dash-list-icon"><i class="fa-solid fa-receipt"></i></div><div class="dash-list-main"><strong>Maruti Baleno — trip #ST20366</strong><span>UPI · venkat@okhdfc</span></div><div class="dash-list-meta">14 Aug</div><div class="dash-list-right"><span class="dash-amount">₹1,998</span><span class="dash-badge ok">Paid</span></div></div>
+            <div class="dash-list-row"><div class="dash-list-icon"><i class="fa-solid fa-receipt"></i></div><div class="dash-list-main"><strong>Tata Nexon EV — trip #ST20312</strong><span>Visa •••• 4417</span></div><div class="dash-list-meta">22 Jul</div><div class="dash-list-right"><span class="dash-amount">₹1,599</span><span class="dash-badge ok">Paid</span></div></div>
+            <div class="dash-list-row"><div class="dash-list-icon"><i class="fa-solid fa-receipt"></i></div><div class="dash-list-main"><strong>Mercedes C-Class — trip #ST20240</strong><span>Visa •••• 4417</span></div><div class="dash-list-meta">18 Jun</div><div class="dash-list-right"><span class="dash-amount">₹8,598</span><span class="dash-badge ok">Paid</span></div></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ---------- SUPPORT PANEL ---------- -->
+      <section class="dash-panel" id="panel-support">
+        <div class="dash-section-card">
+          <div class="dash-section-head">
+            <div><h2>Support tickets</h2><p>Track anything you've raised with the desk</p></div>
+          </div>
+          <div class="dash-list">
+            <div class="dash-list-row">
+              <div class="dash-list-icon"><i class="fa-solid fa-ticket"></i></div>
+              <div class="dash-list-main"><strong>Flat tyre on trip #ST20481</strong><span>Ticket #TCK-3391 · Refund requested</span></div>
+              <div class="dash-list-meta">2h ago</div>
+              <div class="dash-list-right"><span class="dash-badge warn">Open</span></div>
+            </div>
+            <div class="dash-list-row">
+              <div class="dash-list-icon"><i class="fa-solid fa-ticket"></i></div>
+              <div class="dash-list-main"><strong>Late handover — Bengaluru hub</strong><span>Ticket #TCK-3287 · Compensation credited</span></div>
+              <div class="dash-list-meta">5d ago</div>
+              <div class="dash-list-right"><span class="dash-badge ok">Resolved</span></div>
+            </div>
+            <div class="dash-list-row">
+              <div class="dash-list-icon"><i class="fa-solid fa-ticket"></i></div>
+              <div class="dash-list-main"><strong>Invoice mismatch on trip #ST20366</strong><span>Ticket #TCK-3204 · Corrected &amp; resent</span></div>
+              <div class="dash-list-meta">3w ago</div>
+              <div class="dash-list-right"><span class="dash-badge ok">Resolved</span></div>
+            </div>
+            <div class="dash-list-row">
+              <div class="dash-list-icon"><i class="fa-solid fa-ticket"></i></div>
+              <div class="dash-list-main"><strong>Child seat missing at pickup</strong><span>Ticket #TCK-3140 · Delivered same day</span></div>
+              <div class="dash-list-meta">2mo ago</div>
+              <div class="dash-list-right"><span class="dash-badge ok">Resolved</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="dash-section-card">
+          <div class="dash-section-head"><div><h2>Need something else?</h2><p>The desk usually replies within 4 minutes</p></div></div>
+          <div class="dash-pay-methods">
+            <div class="dash-pay-card"><i class="fa-solid fa-phone"></i><div><strong>Call the desk</strong><span>+91 044 6789 2200</span></div></div>
+            <div class="dash-pay-card"><i class="fa-brands fa-whatsapp"></i><div><strong>WhatsApp</strong><span>+91 98400 12200</span></div></div>
+            <div class="dash-pay-card"><i class="fa-solid fa-envelope"></i><div><strong>Email</strong><span>hello@stackly.example</span></div></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ---------- SETTINGS PANEL ---------- -->
+      <section class="dash-panel" id="panel-settings">
+        <div class="dash-section-card">
+          <div class="dash-section-head"><div><h2>Account settings</h2><p>Keep your details up to date</p></div></div>
+          <div class="dash-settings-grid">
+            <div class="dash-field"><label>Full name</label><input type="text" data-user-name-input value=""></div>
+            <div class="dash-field"><label>Email</label><input type="email" data-user-email-input value="" disabled></div>
+            <div class="dash-field"><label>Phone</label><input type="text" placeholder="+91 98400 00000"></div>
+            <div class="dash-field">
+              <label>Preferred vehicle type</label>
+              <select><option>Hatchback</option><option>Sedan</option><option>SUV</option><option>Electric</option></select>
+            </div>
+          </div>
+          <button
+  class="dash-save-btn"
+  type="button"
+  onclick="window.location.href='404.html'">
+  Save changes
+</button>
+        </div>
+      </section>
+
+      <!-- ---------- GENERIC "COMING SOON" PANEL ---------- -->
+      <section class="dash-panel dash-soon-panel" id="dashSoonPanel">
+        <i class="fa-solid fa-screwdriver-wrench"></i>
+        <h2><span id="dashSoonTitle">This module</span> is coming soon</h2>
+        <p>We're still building this part of your account. Everything else here is fully live.</p>
+      </section>
+    </div>
+  </div>
+</div>
+
+<script>
+  /* dynamic inbox data — rendered entirely by app.js, not hard-coded markup */
+  window.STK_EMAILS = [
+    { sender: 'Stackly Support', tag: 'Booking', time: '10:02 AM', unread: true, flagged: true,
+      subject: 'Your Hyundai Creta is confirmed', snippet: 'Pickup at OMR Chennai hub is confirmed for today, 6:00 PM…',
+      body: 'Pickup at the OMR Chennai hub is confirmed for today at 6:00 PM. Please carry your driving license and the ID used at signup. Your handover agent is Vikram — he will call 15 minutes before arrival.' },
+    { sender: 'Billing', tag: 'Invoice', time: '8:30 AM', unread: true, flagged: false,
+      subject: 'Invoice for trip #ST20477 is ready', snippet: '₹3,240 was charged to your card ending 4417…',
+      body: '₹3,240 was charged to your card ending 4417 for trip #ST20477 (Bengaluru, 3 days). Download the full invoice anytime from your trip history.' },
+    { sender: 'Stackly Rewards', tag: 'Loyalty', time: 'Yesterday', unread: true, flagged: false,
+      subject: 'You earned 200 loyalty points 🎉', snippet: 'Nice trip! You are now 60% of the way to Gold tier…',
+      body: 'Nice trip! You are now 60% of the way to Gold tier. Two more trips this quarter and you unlock free upgrades on every booking.' },
+    { sender: 'Security', tag: 'Alert', time: 'Yesterday', unread: false, flagged: true,
+      subject: 'New login from Chrome on Windows', snippet: 'We noticed a new sign-in from Chennai, India…',
+      body: 'We noticed a new sign-in to your account from Chrome on Windows, Chennai, India. If this was you, no action is needed. If not, please reset your password immediately.' },
+    { sender: 'Stackly Deals', tag: 'Offer', time: 'Mon', unread: false, flagged: false,
+      subject: 'Weekend SUV offer — 20% off', snippet: 'Book any SUV this weekend and save 20% instantly…',
+      body: 'Book any SUV this weekend and save 20% instantly at checkout — no promo code needed, the discount applies automatically for Gold members like you.' },
+    { sender: 'Stackly Support', tag: 'Support', time: 'Sun', unread: false, flagged: false,
+      subject: 'Your feedback on trip #ST20401', snippet: 'Thanks for the 5-star review — we passed it to the team…',
+      body: 'Thanks for the 5-star review on trip #ST20401 — we passed it along to the vehicle prep team in Bengaluru. They loved hearing it!' }
+  ];
+</script>
+<script src="app.js"></script>
+</body>
+</html>

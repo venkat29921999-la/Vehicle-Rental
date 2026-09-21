@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stackly — Premium Vehicle Rental</title>
+<meta name="description" content="Stackly — rent premium cars, SUVs and bikes across 40+ cities. Book in minutes, drive in style.">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ================= PRELOADER ================= -->
+<div class="preloader" id="preloader">
+  <div class="preloader-logo">
+    <img src="Assest/logo-bone.webp" alt="Stackly">
+  </div>
+  <div class="preloader-bar"><span></span></div>
+</div>
+
+<!-- ================= CUSTOM CURSOR ================= -->
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- ================= HEADER ================= -->
+<header class="site-header" id="siteHeader">
+  <div class="header-inner">
+    <a href="#home" class="brand" aria-label="Home">
+      <img src="Assest/logo-bone.webp" alt="Stackly logo" class="logo-img">
+    </a>
+
+    <nav class="main-nav" id="mainNav">
+      <ul>
+        <li><a href="index.html" class="nav-link active" data-nav="home">Home</a></li>
+        <li><a href="about.html" class="nav-link" data-nav="about">About</a></li>
+        <li><a href="services.html" class="nav-link" data-nav="services">Services</a></li>
+        <li><a href="blog.html" class="nav-link" data-nav="blog">Blog</a></li>
+        <li><a href="contact.html" class="nav-link" data-nav="contact">Contact</a></li>
+      </ul>
+      <a href="login.html" class="login-btn login-btn-mobile"><i class="fa-solid fa-user"></i> Log In</a>
+    </nav>
+
+    <div class="header-actions">
+      <a href="login.html" class="login-btn"><i class="fa-solid fa-user"></i><span>Log In</span></a>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+<div class="nav-overlay" id="navOverlay"></div>
+
+<main>
+
+<!-- ================= 1. HERO ================= -->
+<section class="hero" id="home">
+  <div class="hero-bg">
+    <div class="road-line"></div>
+    <div class="hero-glow"></div>
+  </div>
+
+  <div class="hero-container">
+    <div class="hero-text">
+      <p class="hero-kicker"><i class="fa-solid fa-location-dot"></i> Now live in 42 cities</p>
+      <h1 class="hero-title">
+        <span class="line" data-speed="1">Rent the road,</span>
+        <span class="line accent-text" data-speed="1.2">own the moment.</span>
+      </h1>
+      <p class="hero-desc">From city-run hatchbacks to weekend-ready SUVs and long-haul tourers —
+        Stackly puts a fully-insured, freshly-serviced vehicle in your driveway in under 10 minutes.</p>
+
+      <div class="hero-search" id="heroSearch">
+        <div class="hs-field">
+          <i class="fa-solid fa-location-crosshairs"></i>
+          <div>
+            <label>Pickup location</label>
+            <input type="text" placeholder="Chennai, Tamil Nadu">
+          </div>
+        </div>
+        <div class="hs-field">
+          <i class="fa-regular fa-calendar"></i>
+          <div>
+            <label>Pickup date</label>
+            <input type="text" placeholder="Sep 18, 10:00 AM">
+          </div>
+        </div>
+        <div class="hs-field">
+          <i class="fa-regular fa-calendar-check"></i>
+          <div>
+            <label>Return date</label>
+            <input type="text" placeholder="Sep 21, 10:00 AM">
+          </div>
+        </div>
+<button type="button" class="hs-submit" onclick="window.location.href='404.html'">
+  <i class="fa-solid fa-magnifying-glass"></i> Find a ride
+</button>
+      </div>
+
+      <div class="hero-tags">
+        <span><i class="fa-solid fa-shield-halved"></i> Full insurance</span>
+        <span><i class="fa-solid fa-bolt"></i> Instant approval</span>
+        <span><i class="fa-solid fa-rotate"></i> Free cancellation</span>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="hero-car-stage">
+        <img src="Assest/cr1.webp" alt="Premium rental car" class="hero-car-img" id="heroCar">
+        <div class="hero-orbit-ring"></div>
+        <div class="floating-card card-speed" data-float>
+          <i class="fa-solid fa-gauge-high"></i>
+          <div><strong>250</strong><span>km/h top speed</span></div>
+        </div>
+        <div class="floating-card card-rating" data-float>
+          <i class="fa-solid fa-star"></i>
+          <div><strong>4.9</strong><span>12,400 reviews</span></div>
+        </div>
+        <div class="floating-card card-price" data-float>
+          <span>Starting at</span>
+          <strong>₹1,499<small>/day</small></strong>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-cue"><span></span><p>Scroll</p></div>
+</section>
+
+<!-- ================= 2. STATS MARQUEE ================= -->
+<section class="stats-strip">
+  <div class="stats-inner">
+    <div class="stat-item" data-count="1200">
+      <h3><span class="count">0</span>+</h3>
+      <p>Vehicles in fleet</p>
+    </div>
+    <div class="stat-item" data-count="42">
+      <h3><span class="count">0</span></h3>
+      <p>Cities covered</p>
+    </div>
+    <div class="stat-item" data-count="98000">
+      <h3><span class="count">0</span>+</h3>
+      <p>Happy renters</p>
+    </div>
+    <div class="stat-item" data-count="4.9" data-decimal="1">
+      <h3><span class="count">0</span>/5</h3>
+      <p>Average rating</p>
+    </div>
+  </div>
+  <div class="logo-marquee">
+    <div class="marquee-track">
+      <span><i class="fa-brands fa-google"></i> Google Partner</span>
+      <span><i class="fa-solid fa-shield-halved"></i> ICICI Lombard Insured</span>
+      <span><i class="fa-solid fa-award"></i> Best Fleet App 2025</span>
+      <span><i class="fa-solid fa-leaf"></i> Green Mobility Certified</span>
+      <span><i class="fa-brands fa-google"></i> Google Partner</span>
+      <span><i class="fa-solid fa-shield-halved"></i> ICICI Lombard Insured</span>
+      <span><i class="fa-solid fa-award"></i> Best Fleet App 2025</span>
+      <span><i class="fa-solid fa-leaf"></i> Green Mobility Certified</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 3. ABOUT ================= -->
+<section class="about" id="about">
+  <div class="about-media">
+    <img src="Assest/cr2.webp" alt="Stackly garage" class="about-img-main">
+    <img src="Assest/cr3.webp" alt="Stackly team handover" class="about-img-float">
+    <div class="about-badge">
+      <i class="fa-solid fa-key"></i>
+      <p>7-year<br>track record</p>
+    </div>
+  </div>
+
+  <div class="about-content">
+    <p class="section-kicker">About Stackly</p>
+    <h2 class="section-title">Built by drivers, <span class="accent-text">for drivers.</span></h2>
+    <p class="section-desc">Stackly started with three cars and a single parking lot in 2018. Today
+      we run a self-serviced fleet across 42 cities, backed by a maintenance crew that inspects every
+      vehicle after each trip — so the car you book is the car you get, every single time.</p>
+
+    <div class="about-points">
+      <div class="point"><i class="fa-solid fa-screwdriver-wrench"></i><div><h4>200-point inspection</h4><p>Before and after every rental, no exceptions.</p></div></div>
+      <div class="point"><i class="fa-solid fa-map-location-dot"></i><div><h4>Doorstep delivery</h4><p>Vehicles delivered to your address within city limits.</p></div></div>
+      <div class="point"><i class="fa-solid fa-headset"></i><div><h4>24/7 roadside help</h4><p>A real human answers, average wait under 90 seconds.</p></div></div>
+    </div>
+
+    <a href="404.html" class="btn-outline">Meet the team <i class="fa-solid fa-arrow-right"></i></a>
+  </div>
+</section>
+
+<!-- ================= 4. SERVICES / CATEGORIES ================= -->
+<section class="categories" id="services">
+  <div class="section-head">
+    <p class="section-kicker">What we offer</p>
+    <h2 class="section-title">A vehicle for every kind of journey</h2>
+    <p class="section-desc">Six categories, one simple app. Swap between them for every trip you take.</p>
+  </div>
+
+  <div class="category-grid">
+    <div class="cat-card">
+      <div class="cat-img"><img src="Assest/cr4.webp" alt="Economy hatchback"></div>
+      <div class="cat-body">
+        <i class="fa-solid fa-car"></i>
+        <h3>Economy</h3>
+        <p>Compact hatchbacks perfect for city runs and daily commutes.</p>
+        <span class="cat-price">From ₹899/day</span>
+      </div>
+    </div>
+    <div class="cat-card">
+      <div class="cat-img"><img src="Assest/cr5.webp" alt="Luxury sedan"></div>
+      <div class="cat-body">
+        <i class="fa-solid fa-car-side"></i>
+        <h3>Luxury Sedan</h3>
+        <p>Executive rides for business trips and special occasions.</p>
+        <span class="cat-price">From ₹3,499/day</span>
+      </div>
+    </div>
+    <div class="cat-card">
+      <div class="cat-img"><img src="Assest/cr6.webp" alt="SUV rental"></div>
+      <div class="cat-body">
+        <i class="fa-solid fa-truck-monster"></i>
+        <h3>SUV &amp; 4x4</h3>
+        <p>Room for the whole crew, ready for gravel and hill roads.</p>
+        <span class="cat-price">From ₹2,199/day</span>
+      </div>
+    </div>
+    <div class="cat-card">
+      <div class="cat-img"><img src="Assest/cr7.webp" alt="Electric vehicle"></div>
+      <div class="cat-body">
+        <i class="fa-solid fa-bolt"></i>
+        <h3>Electric</h3>
+        <p>Zero-emission hatchbacks with fast-charge network access.</p>
+        <span class="cat-price">From ₹1,599/day</span>
+      </div>
+    </div>
+    <div class="cat-card">
+      <div class="cat-img"><img src="Assest/cr8.webp" alt="Motorbike rental"></div>
+      <div class="cat-body">
+        <i class="fa-solid fa-motorcycle"></i>
+        <h3>Motorbike</h3>
+        <p>Nimble two-wheelers for solo trips and quick errands.</p>
+        <span class="cat-price">From ₹399/day</span>
+      </div>
+    </div>
+    <div class="cat-card">
+      <div class="cat-img"><img src="Assest/cr1.webp" alt="Van rental"></div>
+      <div class="cat-body">
+        <i class="fa-solid fa-van-shuttle"></i>
+        <h3>Van &amp; Cargo</h3>
+        <p>Extra boot space for moves, group trips and deliveries.</p>
+        <span class="cat-price">From ₹2,899/day</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 5. FEATURED FLEET (Marquee gallery) ================= -->
+<section class="fleet" id="fleet">
+  <div class="section-head light">
+    <p class="section-kicker">Featured fleet</p>
+    <h2 class="section-title">Handpicked favorites this month</h2>
+  </div>
+
+  <div class="fleet-slider" id="fleetSlider">
+    <div class="fleet-track" id="fleetTrack">
+
+      <div class="fleet-card">
+        <img src="Assest/cr9.webp" alt="Mercedes rental">
+        <div class="fleet-info">
+          <h4>Mercedes C-Class</h4>
+          <div class="fleet-specs"><span><i class="fa-solid fa-gas-pump"></i> Petrol</span><span><i class="fa-solid fa-users"></i> 4 seats</span><span><i class="fa-solid fa-gauge"></i> Auto</span></div>
+          <div class="fleet-bottom"><strong>₹4,299/day</strong><button type="button" onclick="window.location.href='404.html'">
+  <i class="fa-solid fa-arrow-right"></i>
+</button></div>
+        </div>
+      </div>
+
+      <div class="fleet-card">
+        <img src="Assest/cr3.webp" alt="Range Rover rental">
+        <div class="fleet-info">
+          <h4>Range Rover Evoque</h4>
+          <div class="fleet-specs"><span><i class="fa-solid fa-gas-pump"></i> Diesel</span><span><i class="fa-solid fa-users"></i> 5 seats</span><span><i class="fa-solid fa-gauge"></i> Auto</span></div>
+          <div class="fleet-bottom"><strong>₹5,999/day</strong><button type="button" onclick="window.location.href='404.html'">
+  <i class="fa-solid fa-arrow-right"></i>
+</button></div>
+        </div>
+      </div>
+
+      <div class="fleet-card">
+        <img src="Assest/cr10.webp" alt="Hatchback rental">
+        <div class="fleet-info">
+          <h4>Maruti Baleno</h4>
+          <div class="fleet-specs"><span><i class="fa-solid fa-gas-pump"></i> Petrol</span><span><i class="fa-solid fa-users"></i> 5 seats</span><span><i class="fa-solid fa-gauge"></i> Manual</span></div>
+          <div class="fleet-bottom"><strong>₹999/day</strong><button type="button" onclick="window.location.href='404.html'">
+  <i class="fa-solid fa-arrow-right"></i>
+</button></div>
+        </div>
+      </div>
+
+      <div class="fleet-card">
+        <img src="Assest/cr1.webp" alt="Sports car rental">
+        <div class="fleet-info">
+          <h4>BMW 4 Series</h4>
+          <div class="fleet-specs"><span><i class="fa-solid fa-gas-pump"></i> Petrol</span><span><i class="fa-solid fa-users"></i> 4 seats</span><span><i class="fa-solid fa-gauge"></i> Auto</span></div>
+          <div class="fleet-bottom"><strong>₹6,499/day</strong><button type="button" onclick="window.location.href='404.html'">
+  <i class="fa-solid fa-arrow-right"></i>
+</button></div>
+        </div>
+      </div>
+
+      <div class="fleet-card">
+        <img src="Assest/cr11.webp" alt="City car rental">
+        <div class="fleet-info">
+          <h4>Hyundai i20</h4>
+          <div class="fleet-specs"><span><i class="fa-solid fa-gas-pump"></i> Petrol</span><span><i class="fa-solid fa-users"></i> 5 seats</span><span><i class="fa-solid fa-gauge"></i> Manual</span></div>
+          <div class="fleet-bottom"><strong>₹1,199/day</strong><button type="button" onclick="window.location.href='404.html'">
+  <i class="fa-solid fa-arrow-right"></i>
+</button></div>
+        </div>
+      </div>
+
+    </div>
+    <div class="fleet-nav">
+      <button id="fleetPrev"><i class="fa-solid fa-arrow-left"></i></button>
+      <button id="fleetNext"><i class="fa-solid fa-arrow-right"></i></button>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 6. HOW IT WORKS ================= -->
+<section class="how-it-works">
+  <div class="section-head">
+    <p class="section-kicker">Simple process</p>
+    <h2 class="section-title">Three steps to your next drive</h2>
+  </div>
+
+  <div class="steps-wrap">
+    <div class="steps-line"><span id="stepsProgress"></span></div>
+
+    <div class="step-card">
+      <div class="step-num">01</div>
+      <img src="Assest/cr12.webp" alt="Choose a car on app">
+      <h3>Pick your ride</h3>
+      <p>Browse live availability by location, category and budget in the app.</p>
+    </div>
+    <div class="step-card">
+      <div class="step-num">02</div>
+      <img src="Assest/cr13.webp" alt="Verify documents">
+      <h3>Verify &amp; confirm</h3>
+      <p>Upload your license once — instant approval for every future booking.</p>
+    </div>
+    <div class="step-card">
+      <div class="step-num">03</div>
+      <img src="Assest/cr14.webp" alt="Drive away">
+      <h3>Unlock &amp; drive</h3>
+      <p>Tap unlock in the app and hit the road — keys optional.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 7. WHY CHOOSE US ================= -->
+<section class="why-us" id="why">
+  <div class="why-media">
+    <img src="Assest/cr10.webp" alt="Steering wheel interior">
+  </div>
+  <div class="why-content">
+    <p class="section-kicker">Why Stackly</p>
+    <h2 class="section-title">Renting, minus the friction</h2>
+
+    <div class="why-grid">
+      <div class="why-item">
+        <i class="fa-solid fa-bolt-lightning"></i>
+        <h4>Instant booking</h4>
+        <p>No phone calls, no paperwork queues — confirmed in under a minute.</p>
+      </div>
+      <div class="why-item">
+        <i class="fa-solid fa-hand-holding-dollar"></i>
+        <h4>Transparent pricing</h4>
+        <p>The price you see includes tax, insurance and 100km/day free.</p>
+      </div>
+      <div class="why-item">
+        <i class="fa-solid fa-route"></i>
+        <h4>One-way trips</h4>
+        <p>Pick up in one city, drop off in another — 18 cities supported.</p>
+      </div>
+      <div class="why-item">
+        <i class="fa-solid fa-mobile-screen-button"></i>
+        <h4>Digital key</h4>
+        <p>Unlock, start and end trips from the app — no key handover needed.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 8. PRICING ================= -->
+<section class="pricing" id="pricing">
+  <div class="section-head">
+    <p class="section-kicker">Membership</p>
+    <h2 class="section-title">Plans that pay for themselves</h2>
+    <p class="section-desc">Rent often? Subscribe and unlock lower per-day rates plus priority pickup.</p>
+  </div>
+
+  <div class="pricing-grid">
+    <div class="price-card">
+      <h3>Explorer</h3>
+      <p class="price-tag"><span>₹0</span>/month</p>
+      <p class="price-sub">Pay-as-you-go, no commitment</p>
+      <ul>
+        <li><i class="fa-solid fa-check"></i> Standard daily rates</li>
+        <li><i class="fa-solid fa-check"></i> 100km/day included</li>
+        <li><i class="fa-solid fa-check"></i> Standard support</li>
+      </ul>
+      <button type="button" class="plan-btn" onclick="window.location.href='404.html'">
+  Start free
+</button>
+    </div>
+
+    <div class="price-card featured">
+      <span class="price-badge">Most popular</span>
+      <h3>Cruiser</h3>
+      <p class="price-tag"><span>₹499</span>/month</p>
+      <p class="price-sub">For monthly renters</p>
+      <ul>
+        <li><i class="fa-solid fa-check"></i> 15% off every booking</li>
+        <li><i class="fa-solid fa-check"></i> 250km/day included</li>
+        <li><i class="fa-solid fa-check"></i> Priority pickup slots</li>
+        <li><i class="fa-solid fa-check"></i> 24/7 priority support</li>
+      </ul>
+     <button type="button" class="plan-btn" onclick="window.location.href='404.html'">
+  Choose Cruiser
+</button>
+    </div>
+
+    <div class="price-card">
+      <h3>Voyager</h3>
+      <p class="price-tag"><span>₹1,299</span>/month</p>
+      <p class="price-sub">For business &amp; frequent travel</p>
+      <ul>
+        <li><i class="fa-solid fa-check"></i> 25% off every booking</li>
+        <li><i class="fa-solid fa-check"></i> Unlimited kilometers</li>
+        <li><i class="fa-solid fa-check"></i> Free upgrades when available</li>
+        <li><i class="fa-solid fa-check"></i> Dedicated account manager</li>
+      </ul>
+      <button type="button" class="plan-btn" onclick="window.location.href='404.html'">
+  Choose Voyager
+</button>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 9. TESTIMONIALS ================= -->
+<section class="testimonials">
+  <div class="section-head light">
+    <p class="section-kicker">Renter stories</p>
+    <h2 class="section-title">Trusted on every route</h2>
+  </div>
+
+  <div class="testi-wrap" id="testiWrap">
+    <div class="testi-card active">
+      <img src="Assest/cr15.webp" alt="Renter portrait">
+      <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+      <p>"Booked an SUV for a hill trip at midnight and it was parked outside by 6am. The condition was showroom-fresh."</p>
+      <h5>Aarav Mehta <span>Bengaluru</span></h5>
+    </div>
+    <div class="testi-card">
+      <img src="Assest/cr16.webp" alt="Renter portrait">
+      <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+      <p>"The one-way trip feature saved us an entire day of driving back. Dropped the car in Pondicherry and flew home."</p>
+      <h5>Sanya Iyer <span>Chennai</span></h5>
+    </div>
+    <div class="testi-card">
+      <img src="Assest/cr17.webp" alt="Renter portrait">
+      <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></div>
+      <p>"Cruiser plan pays for itself after two trips. Support picked up in nine seconds when I called about a flat tyre."</p>
+      <h5>Rohan Das <span>Mumbai</span></h5>
+    </div>
+  </div>
+  <div class="testi-dots" id="testiDots"></div>
+</section>
+
+<!-- ================= 10. BLOG ================= -->
+<section class="blog" id="blog">
+  <div class="section-head">
+    <p class="section-kicker">The Journal</p>
+    <h2 class="section-title">Stories from the road</h2>
+  </div>
+
+  <div class="blog-grid">
+    <article class="blog-card">
+      <div class="blog-img"><img src="Assest/cr18.webp" alt="Road trip route"></div>
+      <div class="blog-body">
+        <span class="blog-tag">Road Trips</span>
+        <h3>5 coastal drives to take before monsoon hits</h3>
+        <p>From ECR Chennai to the backwaters of Kerala — routes worth the fuel.</p>
+        <a href="404.html">Read story <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </article>
+    <article class="blog-card">
+      <div class="blog-img"><img src="Assest/cr7.webp" alt="Electric car charging">
+</div>
+      <div class="blog-body">
+        <span class="blog-tag">Electric</span>
+        <h3>Is an EV rental right for your next trip?</h3>
+        <p>A honest breakdown of range, charging stops and real savings.</p>
+        <a href="404.html">Read story <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </article>
+    <article class="blog-card">
+      <div class="blog-img"><img src="Assest/cr19.webp" alt="Family road trip"></div>
+      <div class="blog-body">
+        <span class="blog-tag">Guides</span>
+        <h3>Renting with kids: a packing &amp; safety checklist</h3>
+        <p>Car seats, snack storage and the documents you'll actually need.</p>
+        <a href="404.html">Read story <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ================= 11. CONTACT / CTA ================= -->
+<section class="contact" id="contact">
+  <div class="contact-grid">
+    <div class="contact-info">
+      <p class="section-kicker">Get in touch</p>
+      <h2 class="section-title">Let's get you on the road</h2>
+      <p class="section-desc">Questions about a booking, a corporate account, or partnering your fleet with us? Our team replies within the hour.</p>
+
+      <div class="contact-line"><i class="fa-solid fa-phone"></i><div><h4>Call us</h4><p>+91 044 6789 2200</p></div></div>
+      <div class="contact-line"><i class="fa-solid fa-envelope"></i><div><h4>Email</h4><p>hello@stackly.example</p></div></div>
+      <div class="contact-line"><i class="fa-solid fa-location-dot"></i><div><h4>Headquarters</h4><p>OMR Tech Corridor, Chennai, Tamil Nadu</p></div></div>
+
+      <div class="sk-social">
+        <a href="404.html" aria-label="Instagram"><i class="soc-ig"></i></a>
+        <a href="404.html" aria-label="X"><i class="soc-x"></i></a>
+        <a href="404.html" aria-label="LinkedIn"><i class="soc-li"></i></a>
+        <a href="404.html" aria-label="YouTube"><i class="soc-yt"></i></a>
+      </div>
+    </div>
+
+    <form class="contact-form" id="contactForm" novalidate>
+      <div class="form-row">
+        <div class="form-field" id="contactNameField">
+          <label for="contactName">Full name</label>
+          <input type="text" id="contactName" placeholder="Your name">
+          <p class="form-error"></p>
+        </div>
+        <div class="form-field" id="contactPhoneField">
+          <label for="contactPhone">Phone number</label>
+          <input type="text" id="contactPhone" placeholder="+91">
+          <p class="form-error"></p>
+        </div>
+      </div>
+      <div class="form-field" id="contactEmailField">
+        <label for="contactEmail">Email address</label>
+        <input type="email" id="contactEmail" placeholder="you@example.com">
+        <p class="form-error"></p>
+      </div>
+      <div class="form-field"><label>What do you need?</label>
+        <select id="contactReason">
+          <option>General enquiry</option>
+          <option>Corporate account</option>
+          <option>List my vehicle</option>
+          <option>Support with a trip</option>
+        </select>
+      </div>
+      <div class="form-field" id="contactMessageField">
+        <label for="contactMessage">Message</label>
+        <textarea rows="4" id="contactMessage" placeholder="Tell us a little more..."></textarea>
+        <p class="form-error"></p>
+      </div>
+      <button type="submit" class="submit-btn" id="contactSubmit">Send message <i class="fa-solid fa-paper-plane"></i></button>
+    </form>
+  </div>
+</section>
+
+<!-- ================= APP CTA BANNER ================= -->
+<section class="app-cta">
+  <div class="app-cta-inner">
+    <div class="cta-shine" aria-hidden="true"></div>
+    <div>
+      <p class="section-kicker">Get the app</p>
+      <h2 class="section-title">Unlock your next ride from your pocket</h2>
+      <p class="section-desc">Live tracking, digital keys and 24/7 support — download Stackly today.</p>
+      <div class="store-badges">
+        <a href="404.html"><i class="fa-brands fa-apple"></i> App Store</a>
+        <a href="404.html"><i class="fa-brands fa-google-play"></i> Google Play</a>
+      </div>
+    </div>
+    <img src="Assest/cr20.webp" alt="Stackly mobile app">
+  </div>
+</section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="site-footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="index.html" class="footer-logo-link" aria-label="Go to homepage">
+        <img src="Assest/logo-bone.webp" alt="Stackly logo" class="footer-logo">
+      </a>
+      <p>Premium, self-serviced vehicle rental across 42 Indian cities. Insured, inspected, instant.</p>
+      <div class="sk-social">
+  <a href="404.html" aria-label="Instagram"><i class="soc-ig"></i></a>
+  <a href="404.html" aria-label="X"><i class="soc-x"></i></a>
+  <a href="404.html" aria-label="LinkedIn"><i class="soc-li"></i></a>
+  <a href="404.html" aria-label="YouTube"><i class="soc-yt"></i></a>
+</div>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="index.html">Home</a>
+      <a href="about.html">About us</a>
+      <a href="services.html">Services</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h4>Fleet</h4>
+      <a href="404.html">Economy</a>
+      <a href="404.html">Luxury Sedan</a>
+      <a href="404.html">SUV &amp; 4x4</a>
+      <a href="404.html">Electric</a>
+    </div>
+    <div class="footer-col">
+      <h4>Newsletter</h4>
+      <p>Route guides &amp; deals, twice a month.</p>
+     <div class="news-input">
+  <input type="email" id="newsEmail" placeholder="Your email" required>
+  <button type="button" onclick="validateAndRedirect()">
+    <i class="fa-solid fa-paper-plane"></i>
+  </button>
+</div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 Stackly Mobility Pvt. Ltd. All rights reserved.</p>
+    <div class="footer-legal"><a href="404.html">Privacy</a><a href="404.html">Terms</a><a href="404.html">Sitemap</a></div>
+  </div>
+</footer>
+
+<button class="back-to-top" id="backToTop"><i class="fa-solid fa-arrow-up"></i></button>
+
+<!-- Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="script.js"></script>
+
+<script>
+function validateAndRedirect() {
+  const email = document.getElementById("newsEmail");
+
+  if (email.checkValidity()) {
+    window.location.href = "404.html";
+  } else {
+    email.reportValidity();
+  }
+}
+
+// Clear the field when returning to this page
+window.addEventListener("pageshow", function () {
+  document.getElementById("newsEmail").value = "";
+});
+</script>
+
+<!-- Contact form: validates, then redirects to 404.html on success (no backend wired up yet) -->
+<script>
+document.getElementById('contactForm')?.addEventListener('submit', function (e) {
+  e.preventDefault();
+
+  const nameField = document.getElementById('contactNameField');
+  const phoneField = document.getElementById('contactPhoneField');
+  const emailField = document.getElementById('contactEmailField');
+  const messageField = document.getElementById('contactMessageField');
+
+  const nameInput = document.getElementById('contactName');
+  const phoneInput = document.getElementById('contactPhone');
+  const emailInput = document.getElementById('contactEmail');
+  const messageInput = document.getElementById('contactMessage');
+
+  function setError(fieldEl, message) {
+    fieldEl.classList.add('invalid');
+    const msg = fieldEl.querySelector('.form-error');
+    if (msg) msg.textContent = message;
+  }
+  function clearError(fieldEl) {
+    fieldEl.classList.remove('invalid');
+  }
+
+  let valid = true;
+  [nameField, phoneField, emailField, messageField].forEach(clearError);
+
+  if (nameInput.value.trim().length < 2) {
+    setError(nameField, 'Enter your full name');
+    valid = false;
+  }
+  if (!/^[0-9+\-\s()]{7,15}$/.test(phoneInput.value.trim())) {
+    setError(phoneField, 'Enter a valid phone number');
+    valid = false;
+  }
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value.trim())) {
+    setError(emailField, 'Enter a valid email address');
+    valid = false;
+  }
+  if (messageInput.value.trim().length < 5) {
+    setError(messageField, 'Tell us a little more');
+    valid = false;
+  }
+  if (!valid) return;
+
+  sessionStorage.setItem('stacklyContactSubmitted', '1');
+  window.location.href = '404.html';
+});
+
+[
+  ['contactName', 'contactNameField'],
+  ['contactPhone', 'contactPhoneField'],
+  ['contactEmail', 'contactEmailField'],
+  ['contactMessage', 'contactMessageField']
+].forEach(([inputId, fieldId]) => {
+  document.getElementById(inputId)?.addEventListener('input', () => {
+    document.getElementById(fieldId)?.classList.remove('invalid');
+  });
+});
+</script>
+
+<!-- Clear the contact form ONLY when the visitor lands back here after
+     being sent to 404.html on a successful submit (e.g. via the browser
+     Back button). 'pageshow' also fires when the page is restored from
+     bfcache, which is how Back normally brings this page back. -->
+<script>
+window.addEventListener('pageshow', function () {
+  if (sessionStorage.getItem('stacklyContactSubmitted') !== '1') return;
+  sessionStorage.removeItem('stacklyContactSubmitted');
+
+  ['contactName', 'contactPhone', 'contactEmail', 'contactMessage'].forEach(function (id) {
+    const el = document.getElementById(id);
+    if (el) el.value = '';
+  });
+  const reasonEl = document.getElementById('contactReason');
+  if (reasonEl) reasonEl.selectedIndex = 0;
+
+  document.querySelectorAll('#contactForm .form-field.invalid').forEach(function (f) {
+    f.classList.remove('invalid');
+  });
+});
+</script>
+</body>
+</html>

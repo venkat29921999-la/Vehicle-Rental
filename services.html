@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services — Stackly | Plans, Add-ons &amp; Coverage</title>
+<meta name="description" content="Every Stackly service in one place: vehicle categories, how booking works, add-ons, pricing plans, city coverage and answers to common questions.">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="page-services">
+
+<!-- ================= PRELOADER ================= -->
+<div class="preloader" id="preloader">
+  <div class="preloader-logo">
+    <img src="Assest/logo-bone.webp" alt="Stackly">
+  </div>
+  <div class="preloader-bar"><span></span></div>
+</div>
+
+<!-- ================= CUSTOM CURSOR ================= -->
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- ================= HEADER ================= -->
+<header class="site-header" id="siteHeader">
+  <div class="header-inner">
+    <a href="index.html#home" class="brand" aria-label="Home">
+      <img src="Assest/logo-bone.webp" alt="Stackly logo" class="logo-img">
+    </a>
+
+    <nav class="main-nav" id="mainNav">
+      <ul>
+        <li><a href="index.html" class="nav-link" data-nav="home">Home</a></li>
+        <li><a href="about.html" class="nav-link" data-nav="about">About</a></li>
+        <li><a href="services.html" class="nav-link active" data-nav="services">Services</a></li>
+        <li><a href="blog.html" class="nav-link" data-nav="blog">Blog</a></li>
+        <li><a href="contact.html" class="nav-link" data-nav="contact">Contact</a></li>
+      </ul>
+      <a href="login.html" class="login-btn login-btn-mobile"><i class="fa-solid fa-user"></i> Log In</a>
+    </nav>
+
+    <div class="header-actions">
+      <a href="login.html" class="login-btn"><i class="fa-solid fa-user"></i><span>Log In</span></a>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+<div class="nav-overlay" id="navOverlay"></div>
+
+<main>
+
+<!-- ================= 1. HERO — scramble-text decode + drifting grid backdrop ================= -->
+<section class="sv-hero" id="sv-hero">
+  <div class="sv-grid-bg" aria-hidden="true"></div>
+  <div class="sv-hero-inner">
+    <p class="sv-hero-kicker"><i class="fa-solid fa-layer-group"></i> Our Services</p>
+    <h1 class="sv-hero-title" id="svScrambleTitle" data-final="A fleet for every kind of trip.">A fleet for every kind of trip.</h1>
+    <p class="sv-hero-desc">Economy hatchbacks to chauffeur-driven SUVs, an hour to a whole month —
+      pick a plan, add what you need, and drive off in minutes.</p>
+    <div class="sv-hero-stats">
+      <div><strong>6</strong><span>Vehicle categories</span></div>
+      <div><strong>42</strong><span>Cities covered</span></div>
+      <div><strong>24/7</strong><span>Roadside support</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 2. CATEGORIES — dealt-from-a-deck card fan-out ================= -->
+<section class="sv-cats" id="categories">
+  <div class="section-head">
+    <p class="section-kicker">Pick your ride</p>
+    <h2 class="section-title">Six ways to get where you're going</h2>
+  </div>
+
+  <div class="sv-cat-grid">
+    <article class="sv-cat-card">
+      <div class="sv-cat-img"><img src="Assest/cr4.webp" alt="Economy hatchback"></div>
+      <h3>Economy</h3>
+      <p>Compact, fuel-efficient hatchbacks for quick city runs.</p>
+      <span class="sv-cat-price">From ₹699/day</span>
+    </article>
+    <article class="sv-cat-card">
+      <div class="sv-cat-img"><img src="Assest/cr5.webp" alt="Premium sedan"></div>
+      <h3>Premium Sedan</h3>
+      <p>Spacious, comfortable sedans built for longer highway drives.</p>
+      <span class="sv-cat-price">From ₹1,499/day</span>
+    </article>
+    <article class="sv-cat-card">
+      <div class="sv-cat-img"><img src="Assest/cr6.webp" alt="SUV rental"></div>
+      <h3>SUV &amp; 4x4</h3>
+      <p>Room for the whole family and the gear that comes with them.</p>
+      <span class="sv-cat-price">From ₹2,199/day</span>
+    </article>
+    <article class="sv-cat-card">
+      <div class="sv-cat-img"><img src="Assest/cr7.webp" alt="Electric vehicle"></div>
+      <h3>Electric</h3>
+      <p>Zero tailpipe emissions with fast-charge stops across the city.</p>
+      <span class="sv-cat-price">From ₹1,199/day</span>
+    </article>
+    <article class="sv-cat-card">
+      <div class="sv-cat-img"><img src="Assest/cr3.webp" alt="Chauffeur driven car"></div>
+      <h3>Chauffeur-Driven</h3>
+      <p>Sit back with a verified professional driver at the wheel.</p>
+      <span class="sv-cat-price">From ₹2,999/day</span>
+    </article>
+    <article class="sv-cat-card">
+      <div class="sv-cat-img"><img src="Assest/cr2.webp" alt="Van for long term lease"></div>
+      <h3>Long-Term Lease</h3>
+      <p>Monthly plans with servicing and insurance bundled in.</p>
+      <span class="sv-cat-price">From ₹18,999/mo</span>
+    </article>
+  </div>
+</section>
+
+<!-- ================= 3. HOW BOOKING WORKS — hand-drawn route with a car tracing the path ================= -->
+<section class="sv-route" id="how-it-works">
+  <div class="section-head">
+    <p class="section-kicker">Getting started</p>
+    <h2 class="section-title">From tap to turn-key in four stops</h2>
+  </div>
+
+  <div class="sv-route-wrap">
+    <svg viewBox="0 0 1000 240" class="sv-route-svg" preserveAspectRatio="none">
+      <path id="svRoutePath" class="sv-route-path"
+        d="M40,200 C 220,200 220,40 400,40 C 580,40 580,200 760,200 C 880,200 900,120 960,60"></path>
+      <g id="svRouteCar" class="sv-route-car" transform="translate(40,200)">
+        <rect x="-15" y="-7" width="30" height="12" rx="4"></rect>
+        <rect x="-8" y="-13" width="15" height="8" rx="3"></rect>
+        <circle cx="-8" cy="6" r="4"></circle>
+        <circle cx="8" cy="6" r="4"></circle>
+      </g>
+    </svg>
+
+    <div class="sv-route-stop" style="left:4%;top:82%;">
+      <span class="sv-route-num">1</span>
+      <h4>Choose your vehicle</h4>
+      <p>Filter by category, dates and pickup point in the app.</p>
+    </div>
+    <div class="sv-route-stop" style="left:38%;top:12%;">
+      <span class="sv-route-num">2</span>
+      <h4>Verify your license</h4>
+      <p>A one-time upload — approved in under two minutes.</p>
+    </div>
+    <div class="sv-route-stop" style="left:74%;top:82%;">
+      <span class="sv-route-num">3</span>
+      <h4>Pick up or get delivered</h4>
+      <p>Collect it from a hub, or have it dropped at your door.</p>
+    </div>
+    <div class="sv-route-stop" style="left:94%;top:20%;">
+      <span class="sv-route-num">4</span>
+      <h4>Drive</h4>
+      <p>Full tank, inspected and ready. That's it.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 4. ADD-ONS — live toggles with a running total ================= -->
+<section class="sv-addons" id="addons">
+  <div class="section-head light">
+    <p class="section-kicker">Make it yours</p>
+    <h2 class="section-title">Add exactly what this trip needs</h2>
+  </div>
+
+  <div class="sv-addons-wrap">
+    <div class="sv-addon-grid">
+      <div class="sv-addon-card" data-price="199">
+        <div class="sv-addon-info">
+          <i class="fa-solid fa-shield-halved"></i>
+          <div><h4>Zero Depreciation Cover</h4><p>Full protection, no deductions on claims.</p></div>
+        </div>
+        <div class="sv-addon-right">
+          <span class="sv-addon-price">₹199/day</span>
+          <label class="sv-toggle">
+            <input type="checkbox" class="sv-addon-check">
+            <span class="sv-toggle-track"><span class="sv-toggle-thumb"></span></span>
+          </label>
+        </div>
+      </div>
+
+      <div class="sv-addon-card" data-price="149">
+        <div class="sv-addon-info">
+          <i class="fa-solid fa-location-crosshairs"></i>
+          <div><h4>GPS Navigator</h4><p>Live traffic-aware routing, built into the dash.</p></div>
+        </div>
+        <div class="sv-addon-right">
+          <span class="sv-addon-price">₹149/day</span>
+          <label class="sv-toggle">
+            <input type="checkbox" class="sv-addon-check">
+            <span class="sv-toggle-track"><span class="sv-toggle-thumb"></span></span>
+          </label>
+        </div>
+      </div>
+
+      <div class="sv-addon-card" data-price="99">
+        <div class="sv-addon-info">
+          <i class="fa-solid fa-child-reaching"></i>
+          <div><h4>Child Seat</h4><p>Certified, adjustable seats for younger passengers.</p></div>
+        </div>
+        <div class="sv-addon-right">
+          <span class="sv-addon-price">₹99/day</span>
+          <label class="sv-toggle">
+            <input type="checkbox" class="sv-addon-check">
+            <span class="sv-toggle-track"><span class="sv-toggle-thumb"></span></span>
+          </label>
+        </div>
+      </div>
+
+      <div class="sv-addon-card" data-price="349">
+        <div class="sv-addon-info">
+          <i class="fa-solid fa-user-plus"></i>
+          <div><h4>Additional Driver</h4><p>Add a second verified driver to the same booking.</p></div>
+        </div>
+        <div class="sv-addon-right">
+          <span class="sv-addon-price">₹349/day</span>
+          <label class="sv-toggle">
+            <input type="checkbox" class="sv-addon-check">
+            <span class="sv-toggle-track"><span class="sv-toggle-thumb"></span></span>
+          </label>
+        </div>
+      </div>
+
+      <div class="sv-addon-card" data-price="129">
+        <div class="sv-addon-info">
+          <i class="fa-solid fa-truck-medical"></i>
+          <div><h4>Roadside Assistance+</h4><p>Priority tow &amp; repair, under 30 minutes.</p></div>
+        </div>
+        <div class="sv-addon-right">
+          <span class="sv-addon-price">₹129/day</span>
+          <label class="sv-toggle">
+            <input type="checkbox" class="sv-addon-check">
+            <span class="sv-toggle-track"><span class="sv-toggle-thumb"></span></span>
+          </label>
+        </div>
+      </div>
+
+      <div class="sv-addon-card" data-price="299">
+        <div class="sv-addon-info">
+          <i class="fa-solid fa-gauge-high"></i>
+          <div><h4>Unlimited Kilometres</h4><p>Drive as far as the trip takes you, no meter running.</p></div>
+        </div>
+        <div class="sv-addon-right">
+          <span class="sv-addon-price">₹299/day</span>
+          <label class="sv-toggle">
+            <input type="checkbox" class="sv-addon-check">
+            <span class="sv-toggle-track"><span class="sv-toggle-thumb"></span></span>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div class="sv-addon-total">
+      <span>Estimated extras</span>
+      <strong>&#8377;<span id="svAddonTotal">0</span><small>/day</small></strong>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 5. PRICING PLANS — tab switcher + odometer-style price roll ================= -->
+<section class="sv-plans" id="plans">
+  <div class="section-head">
+    <p class="section-kicker">Simple pricing</p>
+    <h2 class="section-title">Pay by the day, week or month</h2>
+  </div>
+
+  <div class="sv-plan-tabs" id="svPlanTabs">
+    <button class="sv-plan-tab active" data-period="daily">Daily</button>
+    <button class="sv-plan-tab" data-period="weekly">Weekly</button>
+    <button class="sv-plan-tab" data-period="monthly">Monthly</button>
+    <span class="sv-plan-tab-pill" id="svPlanPill"></span>
+  </div>
+
+  <div class="sv-plan-grid">
+    <div class="sv-plan-card" data-daily="699" data-weekly="3999" data-monthly="14999">
+      <h3>Economy</h3>
+      <div class="sv-plan-price"><span class="sv-plan-currency">&#8377;</span><span class="sv-plan-num" data-value="699">699</span><small class="sv-plan-suffix">/day</small></div>
+      <ul>
+        <li><i class="fa-solid fa-check"></i> Hatchback class</li>
+        <li><i class="fa-solid fa-check"></i> 150 km included</li>
+        <li><i class="fa-solid fa-check"></i> Basic insurance</li>
+      </ul>
+      <button class="btn-outline" type="button" onclick="window.location.href='404.html'">
+  Choose plan
+</button>
+    </div>
+
+    <div class="sv-plan-card featured" data-daily="1499" data-weekly="8999" data-monthly="32999">
+      <span class="sv-plan-tag">Most popular</span>
+      <h3>Premium</h3>
+      <div class="sv-plan-price"><span class="sv-plan-currency">&#8377;</span><span class="sv-plan-num" data-value="1499">1499</span><small class="sv-plan-suffix">/day</small></div>
+      <ul>
+        <li><i class="fa-solid fa-check"></i> Sedan / crossover class</li>
+        <li><i class="fa-solid fa-check"></i> 250 km included</li>
+        <li><i class="fa-solid fa-check"></i> Zero-dep insurance</li>
+      </ul>
+      <button class="hs-submit" type="button" onclick="window.location.href='404.html'">
+  Choose plan
+</button>
+    </div>
+
+    <div class="sv-plan-card" data-daily="2199" data-weekly="12999" data-monthly="47999">
+      <h3>SUV &amp; 4x4</h3>
+      <div class="sv-plan-price"><span class="sv-plan-currency">&#8377;</span><span class="sv-plan-num" data-value="2199">2199</span><small class="sv-plan-suffix">/day</small></div>
+      <ul>
+        <li><i class="fa-solid fa-check"></i> SUV / 4x4 class</li>
+        <li><i class="fa-solid fa-check"></i> Unlimited km</li>
+        <li><i class="fa-solid fa-check"></i> Zero-dep insurance</li>
+      </ul>
+      <button class="btn-outline" type="button" onclick="window.location.href='404.html'">
+  Choose plan
+</button>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 6. COVERAGE — hub-and-spoke network map that lights up ================= -->
+<section class="sv-map" id="coverage">
+  <div class="section-head light">
+    <p class="section-kicker">Where we operate</p>
+    <h2 class="section-title">One hub, a fleet that reaches every corner</h2>
+  </div>
+
+  <div class="sv-map-wrap">
+    <svg viewBox="0 0 800 500" class="sv-map-svg" preserveAspectRatio="xMidYMid meet">
+      <g id="svMapLines">
+        <path class="sv-map-line" d="M400,260 C 350,180 300,140 220,90"></path>
+        <path class="sv-map-line" d="M400,260 C 480,180 540,120 600,70"></path>
+        <path class="sv-map-line" d="M400,260 C 320,320 240,360 150,400"></path>
+        <path class="sv-map-line" d="M400,260 C 480,320 560,370 660,410"></path>
+        <path class="sv-map-line" d="M400,260 C 400,180 420,120 460,60"></path>
+        <path class="sv-map-line" d="M400,260 C 400,340 380,400 340,450"></path>
+      </g>
+      <g id="svMapDots">
+        <circle class="sv-map-hub" cx="400" cy="260" r="9"></circle>
+        <circle class="sv-map-dot" cx="220" cy="90" r="6"></circle>
+        <circle class="sv-map-dot" cx="600" cy="70" r="6"></circle>
+        <circle class="sv-map-dot" cx="150" cy="400" r="6"></circle>
+        <circle class="sv-map-dot" cx="660" cy="410" r="6"></circle>
+        <circle class="sv-map-dot" cx="460" cy="60" r="6"></circle>
+        <circle class="sv-map-dot" cx="340" cy="450" r="6"></circle>
+      </g>
+    </svg>
+    <div class="sv-map-label sv-map-label-hub" style="left:50%;top:52%;">Chennai HQ</div>
+    <div class="sv-map-label" style="left:27%;top:18%;">Bengaluru</div>
+    <div class="sv-map-label" style="left:75%;top:14%;">Hyderabad</div>
+    <div class="sv-map-label" style="left:18%;top:80%;">Coimbatore</div>
+    <div class="sv-map-label" style="left:83%;top:82%;">Kochi</div>
+    <div class="sv-map-label" style="left:57%;top:12%;">Mumbai</div>
+    <div class="sv-map-label" style="left:42%;top:90%;">Madurai</div>
+  </div>
+</section>
+
+<!-- ================= 7. FAQ + CTA — accordion answers, road-line banner ================= -->
+<section class="sv-faq" id="faq">
+  <div class="section-head">
+    <p class="section-kicker">Good to know</p>
+    <h2 class="section-title">Questions renters ask us most</h2>
+  </div>
+
+  <div class="sv-faq-list">
+    <div class="sv-faq-item open">
+      <button class="sv-faq-q">
+        <span>Do I need a credit card to book?</span>
+        <i class="fa-solid fa-plus"></i>
+      </button>
+      <div class="sv-faq-a"><div class="sv-faq-a-inner"><p>No — a valid driving license and a debit or credit card both work. We place a
+        refundable hold that releases automatically after the vehicle is returned.</p></div></div>
+    </div>
+    <div class="sv-faq-item">
+      <button class="sv-faq-q">
+        <span>Can I extend my rental after pickup?</span>
+        <i class="fa-solid fa-plus"></i>
+      </button>
+      <div class="sv-faq-a"><div class="sv-faq-a-inner"><p>Yes, extend right from the app as long as the vehicle isn't booked for
+        someone else next. Extra days are billed at your original daily rate.</p></div></div>
+    </div>
+    <div class="sv-faq-item">
+      <button class="sv-faq-q">
+        <span>What happens if the car breaks down?</span>
+        <i class="fa-solid fa-plus"></i>
+      </button>
+      <div class="sv-faq-a"><div class="sv-faq-a-inner"><p>Call the in-app roadside line and a technician reaches you in under 30
+        minutes in most cities. If it can't be fixed on the spot, we swap the vehicle at no cost.</p></div></div>
+    </div>
+    <div class="sv-faq-item">
+      <button class="sv-faq-q">
+        <span>Is there a security deposit?</span>
+        <i class="fa-solid fa-plus"></i>
+      </button>
+      <div class="sv-faq-a"><div class="sv-faq-a-inner"><p>A small refundable hold is placed at pickup, released within 5–7 working
+        days after a clean drop-off inspection.</p></div></div>
+    </div>
+    <div class="sv-faq-item">
+      <button class="sv-faq-q">
+        <span>Can someone else drive the car I booked?</span>
+        <i class="fa-solid fa-plus"></i>
+      </button>
+      <div class="sv-faq-a"><div class="sv-faq-a-inner"><p>Only drivers added and verified on the booking. Add one instantly with the
+        Additional Driver add-on above.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<div class="sv-cta-road">
+  <div class="sv-road-line" aria-hidden="true"></div>
+  <div class="sv-cta-road-inner">
+    <p class="section-kicker">Ready when you are</p>
+    <h2 class="section-title">Ready to hit the road?</h2>
+    <p class="section-desc">Pick a category, add what this trip needs, and drive off today.</p>
+    <button class="hs-submit">Book your first ride <i class="fa-solid fa-arrow-right"></i></button>
+  </div>
+</div>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="site-footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="index.html" class="footer-logo-link" aria-label="Go to homepage">
+        <img src="Assest/logo-bone.webp" alt="Stackly logo" class="footer-logo">
+      </a>
+      <p>Premium, self-serviced vehicle rental across 42 Indian cities. Insured, inspected, instant.</p>
+      <div class="sk-social">
+  <a href="404.html" aria-label="Instagram"><i class="soc-ig"></i></a>
+  <a href="404.html" aria-label="X"><i class="soc-x"></i></a>
+  <a href="404.html" aria-label="LinkedIn"><i class="soc-li"></i></a>
+  <a href="404.html" aria-label="YouTube"><i class="soc-yt"></i></a>
+</div>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="index.html">Home</a>
+      <a href="about.html">About us</a>
+      <a href="services.html">Services</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h4>Fleet</h4>
+      <a href="404.html">Economy</a>
+      <a href="404.html">Luxury Sedan</a>
+      <a href="404.html">SUV &amp; 4x4</a>
+      <a href="404.html">Electric</a>
+    </div>
+    <div class="footer-col">
+      <h4>Newsletter</h4>
+      <p>Route guides &amp; deals, twice a month.</p>
+     <div class="news-input">
+  <input type="email" id="newsEmail" placeholder="Your email" required>
+  <button type="button" onclick="validateAndRedirect()">
+    <i class="fa-solid fa-paper-plane"></i>
+  </button>
+</div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 Stackly Mobility Pvt. Ltd. All rights reserved.</p>
+    <div class="footer-legal"><a href="404.html">Privacy</a><a href="404.html">Terms</a><a href="404.html">Sitemap</a></div>
+  </div>
+</footer>
+
+<button class="back-to-top" id="backToTop"><i class="fa-solid fa-arrow-up"></i></button>
+
+<!-- Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="script.js"></script>
+<script>
+function validateAndRedirect() {
+  const email = document.getElementById("newsEmail");
+
+  if (email.checkValidity()) {
+    window.location.href = "404.html";
+  } else {
+    email.reportValidity();
+  }
+}
+
+// Clear the field when returning to this page
+window.addEventListener("pageshow", function () {
+  document.getElementById("newsEmail").value = "";
+});
+</script>
+</body>
+</html>

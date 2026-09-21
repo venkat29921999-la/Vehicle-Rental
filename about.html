@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Stackly — Our Story, Mission &amp; Team</title>
+<meta name="description" content="Stackly started with three cars and a parking lot in 2018. Meet the people, the milestones and the mission behind 42 cities of self-serviced rentals.">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="page-about">
+
+<!-- ================= PRELOADER ================= -->
+<div class="preloader" id="preloader">
+  <div class="preloader-logo">
+    <img src="Assest/logo-bone.webp" alt="Stackly">
+  </div>
+  <div class="preloader-bar"><span></span></div>
+</div>
+
+<!-- ================= CUSTOM CURSOR ================= -->
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- ================= HEADER ================= -->
+<header class="site-header" id="siteHeader">
+  <div class="header-inner">
+    <a href="index.html" class="brand" aria-label="Home">
+      <img src="Assest/logo-bone.webp" alt="Stackly logo" class="logo-img">
+    </a>
+
+    <nav class="main-nav" id="mainNav">
+      <ul>
+        <li><a href="index.html" class="nav-link" data-nav="home">Home</a></li>
+        <li><a href="about.html" class="nav-link active" data-nav="about">About</a></li>
+        <li><a href="services.html" class="nav-link" data-nav="services">Services</a></li>
+        <li><a href="blog.html" class="nav-link" data-nav="blog">Blog</a></li>
+        <li><a href="contact.html" class="nav-link" data-nav="contact">Contact</a></li>
+      </ul>
+      <a href="login.html" class="login-btn login-btn-mobile"><i class="fa-solid fa-user"></i> Log In</a>
+    </nav>
+
+    <div class="header-actions">
+      <a href="login.html" class="login-btn"><i class="fa-solid fa-user"></i><span>Log In</span></a>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+<div class="nav-overlay" id="navOverlay"></div>
+
+<main>
+
+<!-- ================= 1. STORY HERO — character-stagger reveal + morphing blob field ================= -->
+<section class="ap-hero" id="story">
+  <div class="ap-blob-field" aria-hidden="true">
+    <span class="ap-blob ap-blob-a"></span>
+    <span class="ap-blob ap-blob-b"></span>
+    <span class="ap-blob ap-blob-c"></span>
+  </div>
+
+  <div class="ap-hero-inner">
+    <p class="ap-hero-kicker"><i class="fa-solid fa-road"></i> About Stackly</p>
+    <h1 class="ap-hero-title">Three cars, one parking lot, and a stubborn idea.</h1>
+    <p class="ap-hero-desc">In 2018 we bet that renting a car shouldn't feel like a chore. Eight years,
+      42 cities and a very patient maintenance crew later, that bet is still paying off — one
+      freshly-inspected vehicle at a time.</p>
+
+    <div class="ap-hero-chip">
+      <span class="ap-hero-chip-dot"></span>
+      <span>Est. 2018 · Chennai, India</span>
+    </div>
+  </div>
+
+  <div class="ap-hero-media">
+    <img src="Assest/cr6.webp" alt="Stackly vehicle handover">
+  </div>
+
+  <div class="ap-scroll-cue"><span></span><p>Scroll to explore</p></div>
+</section>
+
+<!-- ================= 2. MISSION & VISION — pinned scroll-scrub crossfade with a compass step-rail ================= -->
+<section class="ap-mission" id="mission">
+  <div class="ap-mission-pin">
+
+    <div class="ap-mission-media">
+      <div class="ap-mission-frame">
+        <span class="ap-mission-corner ap-mission-corner-tl"></span>
+        <span class="ap-mission-corner ap-mission-corner-br"></span>
+        <div class="ap-mission-frame-glow"></div>
+        <img class="ap-mission-img" data-index="0" src="Assest/cr10.webp" alt="Stackly garage inspection bay">
+        <img class="ap-mission-img" data-index="1" src="Assest/cr3.webp" alt="Stackly team handing over keys">
+      </div>
+      <div class="ap-mission-badge">
+        <span class="ap-mission-badge-panel" data-index="0"><strong>2018</strong><small>Where it started</small></span>
+        <span class="ap-mission-badge-panel" data-index="1"><strong>2026</strong><small>42 cities and counting</small></span>
+      </div>
+    </div>
+
+    <div class="ap-mission-copy">
+      <div class="ap-mission-rail">
+        <div class="ap-mission-step active" data-index="0">
+          <span class="ap-mission-step-dot"><i class="fa-solid fa-compass"></i></span>
+          <span class="ap-mission-step-label">Mission</span>
+        </div>
+        <div class="ap-mission-rail-line"><span id="apMissionRailFill"></span></div>
+        <div class="ap-mission-step" data-index="1">
+          <span class="ap-mission-step-dot"><i class="fa-solid fa-flag-checkered"></i></span>
+          <span class="ap-mission-step-label">Vision</span>
+        </div>
+      </div>
+
+      <div class="ap-mission-panels">
+        <div class="ap-mission-panel" data-index="0">
+          <span class="ap-mission-ghost">01</span>
+          <p class="section-kicker">Our mission</p>
+          <h2 class="section-title">Make every rental feel like your own car.</h2>
+          <p class="section-desc">No queues, no haggling over scratches that were already there. Just a
+            clean, inspected vehicle waiting exactly where and when you need it — booked from your phone
+            in the time it takes to make coffee.</p>
+        </div>
+        <div class="ap-mission-panel" data-index="1">
+          <span class="ap-mission-ghost">02</span>
+          <p class="section-kicker">Our vision</p>
+          <h2 class="section-title">A city where nobody needs to own a car.</h2>
+          <p class="section-desc">We're building the fleet, the charging network and the trust it takes
+            for a subscription to fully replace a driveway. Fewer idle cars, cleaner streets, and a ride
+            ready for you whenever the plan changes.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= 3. OUR JOURNEY — horizontal scroll-hijacked timeline ================= -->
+<section class="ap-timeline" id="journey">
+  <div class="section-head" data-head-static>
+    <p class="section-kicker">The road so far</p>
+    <h2 class="section-title">Our journey, one milestone at a time</h2>
+  </div>
+
+  <div class="ap-timeline-pin">
+    <div class="ap-timeline-track" id="apTimelineTrack">
+
+      <article class="ap-tl-card">
+        <span class="ap-tl-year">2018</span>
+        <img src="Assest/cr14.webp" alt="First Stackly parking lot">
+        <h3>Three cars, one lot</h3>
+        <p>Stackly opens in a single Chennai parking lot with three hatchbacks and a shared spreadsheet.</p>
+      </article>
+
+      <article class="ap-tl-card">
+        <span class="ap-tl-year">2019</span>
+        <img src="Assest/cr1.webp" alt="Fleet expansion across cities">
+        <h3>Ten cities, one app</h3>
+        <p>The booking app ships. Instant approval replaces paperwork, and the fleet crosses 300 vehicles.</p>
+      </article>
+
+      <article class="ap-tl-card">
+        <span class="ap-tl-year">2021</span>
+        <img src="Assest/cr7.webp" alt="Electric vehicle charging">
+        <h3>Going electric</h3>
+        <p>Our first EV hatchbacks join the fleet alongside a fast-charge partner network in six cities.</p>
+      </article>
+
+      <article class="ap-tl-card">
+        <span class="ap-tl-year">2023</span>
+        <img src="Assest/cr9.webp" alt="Premium fleet vehicles">
+        <h3>1,000+ vehicles</h3>
+        <p>Luxury sedans and SUVs join the lineup as the fleet crosses a thousand vehicles nationwide.</p>
+      </article>
+
+      <article class="ap-tl-card">
+        <span class="ap-tl-year">2026</span>
+        <img src="Assest/cr4.webp" alt="Stackly today">
+        <h3>42 cities and counting</h3>
+        <p>Today Stackly runs a self-serviced fleet across 42 cities — and we're just getting started.</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= 4. CORE VALUES — SVG stroke-draw icons + cursor spotlight ================= -->
+<section class="ap-values" id="values">
+  <div class="section-head" data-head-static>
+    <p class="section-kicker">What we stand for</p>
+    <h2 class="section-title">The four things we don't compromise on</h2>
+  </div>
+
+  <div class="ap-values-grid">
+    <div class="ap-value-card">
+      <svg class="ap-value-icon" viewBox="0 0 48 48" fill="none">
+        <path d="M24 4l16 6v10c0 12-7 21-16 24C15 41 8 32 8 20V10z"/>
+      </svg>
+      <h3>Trust</h3>
+      <p>Every vehicle passes a 200-point inspection before and after your trip — no surprises, ever.</p>
+    </div>
+    <div class="ap-value-card">
+      <svg class="ap-value-icon" viewBox="0 0 48 48" fill="none">
+        <path d="M24 6c8 6 16 13 16 23a16 16 0 0 1-32 0C8 19 16 12 24 6z"/>
+        <path d="M24 44V18"/>
+      </svg>
+      <h3>Sustainability</h3>
+      <p>Every idle rental is one less car sitting in a driveway — our EV fleet keeps growing every year.</p>
+    </div>
+    <div class="ap-value-card">
+      <svg class="ap-value-icon" viewBox="0 0 48 48" fill="none">
+        <path d="M27 4L10 27h12l-3 17 19-24H26l1-16z"/>
+      </svg>
+      <h3>Simplicity</h3>
+      <p>One tap to unlock, one screen to see the price — booking a car should take under a minute.</p>
+    </div>
+    <div class="ap-value-card">
+      <svg class="ap-value-icon" viewBox="0 0 48 48" fill="none">
+        <circle cx="17" cy="16" r="6"/>
+        <circle cx="33" cy="16" r="6"/>
+        <path d="M5 40c0-8 6-13 12-13s12 5 12 13"/>
+        <path d="M23 40c0-8 6-13 12-13s8 4 8 9"/>
+      </svg>
+      <h3>Community</h3>
+      <p>A real human answers roadside calls in under 90 seconds — every city, every hour, every day.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 5. MEET THE TEAM — circular mask reveal + hover / tap flip cards ================= -->
+<section class="ap-team" id="team">
+  <div class="section-head light" data-head-static>
+    <p class="section-kicker">The people behind it</p>
+    <h2 class="section-title">Meet the crew keeping the fleet moving</h2>
+  </div>
+
+  <div class="ap-team-grid">
+    <div class="ap-team-card">
+      <div class="ap-team-inner">
+        <div class="ap-team-front">
+          <div class="ap-team-photo">
+            <img src="Assest/cr21.webp" alt="Founder and CEO portrait">
+          </div>
+          <h4>Karthik Suresh</h4>
+          <span>Founder &amp; CEO</span>
+          <small class="ap-flip-hint"><i class="fa-solid fa-arrow-rotate-right"></i> Tap to flip</small>
+        </div>
+        <div class="ap-team-back">
+          <p>Started Stackly with three cars and a spreadsheet. Still does the occasional roadside pickup himself.</p>
+          <div class="ap-team-social">
+            <a href="404.html"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="404.html"><i class="fa-brands fa-x-twitter"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ap-team-card">
+      <div class="ap-team-inner">
+        <div class="ap-team-front">
+          <div class="ap-team-photo">
+            <img src="Assest/cr22.webp" alt="COO portrait">
+          </div>
+          <h4>Meera Nair</h4>
+          <span>Chief Operating Officer</span>
+          <small class="ap-flip-hint"><i class="fa-solid fa-arrow-rotate-right"></i> Tap to flip</small>
+        </div>
+        <div class="ap-team-back">
+          <p>Runs the 42-city playbook end to end — the reason your car shows up exactly on time.</p>
+          <div class="ap-team-social">
+            <a href="404.html"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="404.html"><i class="fa-brands fa-x-twitter"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ap-team-card">
+      <div class="ap-team-inner">
+        <div class="ap-team-front">
+          <div class="ap-team-photo">
+            <img src="Assest/cr23.webp" alt="Head of Fleet Operations portrait">
+          </div>
+          <h4>Arjun Rao</h4>
+          <span>Head of Fleet Ops</span>
+          <small class="ap-flip-hint"><i class="fa-solid fa-arrow-rotate-right"></i> Tap to flip</small>
+        </div>
+        <div class="ap-team-back">
+          <p>Owns the 200-point inspection standard. Has personally rejected a car for a squeaky mirror.</p>
+          <div class="ap-team-social">
+            <a href="404.html"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="404.html"><i class="fa-brands fa-x-twitter"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ap-team-card">
+      <div class="ap-team-inner">
+        <div class="ap-team-front">
+          <div class="ap-team-photo">
+            <img src="Assest/cr24.webp" alt="Head of Support portrait">
+          </div>
+          <h4>Divya Krishnan</h4>
+          <span>Head of Support</span>
+          <small class="ap-flip-hint"><i class="fa-solid fa-arrow-rotate-right"></i> Tap to flip</small>
+        </div>
+        <div class="ap-team-back">
+          <p>Built the 90-second roadside response promise — and the team that actually hits it.</p>
+          <div class="ap-team-social">
+            <a href="404.html"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="404.html"><i class="fa-brands fa-x-twitter"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 6. IMPACT IN NUMBERS — animated SVG progress rings ================= -->
+<section class="ap-impact" id="impact">
+  <div class="section-head" data-head-static>
+    <p class="section-kicker">Impact so far</p>
+    <h2 class="section-title">Numbers we check every single morning</h2>
+  </div>
+
+  <div class="ap-impact-grid">
+    <div class="ap-ring" data-count="1200" data-suffix="+">
+      <svg viewBox="0 0 120 120">
+        <circle class="ap-ring-bg" cx="60" cy="60" r="52"></circle>
+        <circle class="ap-ring-fg" cx="60" cy="60" r="52"></circle>
+      </svg>
+      <div class="ap-ring-value"><span class="count">0</span><small>+</small></div>
+      <p>Vehicles inspected every month</p>
+    </div>
+    <div class="ap-ring" data-count="42">
+      <svg viewBox="0 0 120 120">
+        <circle class="ap-ring-bg" cx="60" cy="60" r="52"></circle>
+        <circle class="ap-ring-fg" cx="60" cy="60" r="52"></circle>
+      </svg>
+      <div class="ap-ring-value"><span class="count">0</span></div>
+      <p>Cities we operate in</p>
+    </div>
+    <div class="ap-ring" data-count="98" data-suffix="%">
+      <svg viewBox="0 0 120 120">
+        <circle class="ap-ring-bg" cx="60" cy="60" r="52"></circle>
+        <circle class="ap-ring-fg" cx="60" cy="60" r="52"></circle>
+      </svg>
+      <div class="ap-ring-value"><span class="count">0</span><small>%</small></div>
+      <p>Renters who rebook within a year</p>
+    </div>
+    <div class="ap-ring" data-count="90">
+      <svg viewBox="0 0 120 120">
+        <circle class="ap-ring-bg" cx="60" cy="60" r="52"></circle>
+        <circle class="ap-ring-fg" cx="60" cy="60" r="52"></circle>
+      </svg>
+      <div class="ap-ring-value"><span class="count">0</span><small>s</small></div>
+      <p>Average roadside response time</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 7. JOIN THE RIDE — outlined marquee + scroll-parallax shapes + ripple CTA ================= -->
+<section class="ap-cta" id="join">
+  <div class="ap-cta-marquee" aria-hidden="true">
+    <div class="ap-cta-marquee-track">
+      <span>DRIVE&nbsp;&bull;&nbsp;EXPLORE&nbsp;&bull;&nbsp;REPEAT&nbsp;&bull;&nbsp;</span>
+      <span>DRIVE&nbsp;&bull;&nbsp;EXPLORE&nbsp;&bull;&nbsp;REPEAT&nbsp;&bull;&nbsp;</span>
+    </div>
+  </div>
+
+  <div class="ap-cta-shapes" aria-hidden="true">
+    <span class="ap-shape ap-shape-a" data-parallax="0.6"></span>
+    <span class="ap-shape ap-shape-b" data-parallax="1.1"></span>
+    <span class="ap-shape ap-shape-c" data-parallax="0.4"></span>
+  </div>
+
+  <div class="ap-cta-content">
+    <p class="section-kicker">Ready when you are</p>
+    <h2 class="section-title">Join the thousands already on the road</h2>
+    <p class="section-desc">Download the app, verify your license once, and your next ride is a tap away
+      — in 42 cities and counting.</p>
+    <button class="hs-submit ap-ripple-btn">Get the app <i class="fa-solid fa-arrow-right"></i></button>
+  </div>
+</section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="site-footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="index.html" class="footer-logo-link" aria-label="Go to homepage">
+        <img src="Assest/logo-bone.webp" alt="Stackly logo" class="footer-logo">
+      </a>
+      <p>Premium, self-serviced vehicle rental across 42 Indian cities. Insured, inspected, instant.</p>
+      <div class="sk-social">
+  <a href="404.html" aria-label="Instagram"><i class="soc-ig"></i></a>
+  <a href="404.html" aria-label="X"><i class="soc-x"></i></a>
+  <a href="404.html" aria-label="LinkedIn"><i class="soc-li"></i></a>
+  <a href="404.html" aria-label="YouTube"><i class="soc-yt"></i></a>
+</div>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="index.html">Home</a>
+      <a href="about.html">About us</a>
+      <a href="services.html">Services</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h4>Fleet</h4>
+      <a href="404.html">Economy</a>
+      <a href="404.html">Luxury Sedan</a>
+      <a href="404.html">SUV &amp; 4x4</a>
+      <a href="404.html">Electric</a>
+    </div>
+    <div class="footer-col">
+      <h4>Newsletter</h4>
+      <p>Route guides &amp; deals, twice a month.</p>
+     <div class="news-input">
+  <input type="email" id="newsEmail" placeholder="Your email" required>
+  <button type="button" onclick="validateAndRedirect()">
+    <i class="fa-solid fa-paper-plane"></i>
+  </button>
+</div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 Stackly Mobility Pvt. Ltd. All rights reserved.</p>
+    <div class="footer-legal"><a href="404.html">Privacy</a><a href="404.html">Terms</a><a href="404.html">Sitemap</a></div>
+  </div>
+</footer>
+
+<button class="back-to-top" id="backToTop"><i class="fa-solid fa-arrow-up"></i></button>
+
+<!-- Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="script.js"></script>
+<script>
+function validateAndRedirect() {
+  const email = document.getElementById("newsEmail");
+
+  if (email.checkValidity()) {
+    window.location.href = "404.html";
+  } else {
+    email.reportValidity();
+  }
+}
+
+// Clear the field when returning to this page
+window.addEventListener("pageshow", function () {
+  document.getElementById("newsEmail").value = "";
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create Account — Stackly</title>
+<meta name="description" content="Create your Stackly account to start booking vehicles or managing a fleet.">
+<meta name="robots" content="noindex">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<a href="index.html" class="auth-back"><i class="fa-solid fa-arrow-left"></i> Back to home</a>
+
+<div class="auth-shell">
+  <div class="auth-aurora"><span></span><span></span><span></span></div>
+  <div class="auth-grain"></div>
+
+  <!-- ============ LEFT: brand / info panel ============ -->
+  <div class="auth-info">
+    <div class="auth-logo">
+      <img src="Assest/logo-bone.webp" alt="Stackly logo">
+    </div>
+    <h1>Join the road,<br><span>own the moment.</span></h1>
+    <p>Create your account in under a minute — book premium vehicles instantly, or set up an admin account to manage your own fleet.</p>
+
+    <div class="auth-points">
+      <div class="auth-point"><i class="fa-solid fa-bolt"></i><span>Instant approval, no paperwork</span></div>
+      <div class="auth-point"><i class="fa-solid fa-tags"></i><span>Member-only pricing from day one</span></div>
+      <div class="auth-point"><i class="fa-solid fa-rotate"></i><span>Free cancellation on every trip</span></div>
+    </div>
+
+    <div class="auth-stats">
+      <div><strong>98K+</strong><span>Happy renters</span></div>
+      <div><strong>42</strong><span>Cities live</span></div>
+      <div><strong>4.9/5</strong><span>Average rating</span></div>
+    </div>
+  </div>
+
+  <!-- ============ RIGHT: signup form ============ -->
+  <div class="auth-form-side">
+    <div class="auth-card" id="signupCard">
+      <div class="auth-card-head">
+        <h2>Create account</h2>
+        <p>Already with us? <a href="login.html">Log in instead</a></p>
+      </div>
+
+      <div class="auth-role" id="signupRole" data-role="user">
+        <div class="auth-role-pill"></div>
+        <button type="button" data-role="admin"><i class="fa-solid fa-user-shield"></i> Admin</button>
+        <button type="button" class="active" data-role="user"><i class="fa-solid fa-user"></i> User</button>
+      </div>
+
+      <form id="signupForm" novalidate>
+        <div class="auth-field" id="signupNameField">
+          <label for="signupName">Full name</label>
+          <div class="auth-input-wrap">
+            <i class="fa-solid fa-user au-lead"></i>
+            <input type="text" id="signupName" placeholder="Your full name" autocomplete="name">
+          </div>
+          <p class="au-error-msg"><i class="fa-solid fa-circle-exclamation"></i> <span></span></p>
+        </div>
+
+        <div class="auth-field" id="signupEmailField">
+          <label for="signupEmail">Email address</label>
+          <div class="auth-input-wrap">
+            <i class="fa-solid fa-envelope au-lead"></i>
+            <input type="email" id="signupEmail" placeholder="you@example.com" autocomplete="email">
+          </div>
+          <p class="au-error-msg"><i class="fa-solid fa-circle-exclamation"></i> <span></span></p>
+        </div>
+
+        <div class="auth-field" id="signupPassField">
+          <label for="signupPassword">Password</label>
+          <div class="auth-input-wrap">
+            <i class="fa-solid fa-lock au-lead"></i>
+            <input type="password" id="signupPassword" placeholder="Create a password" autocomplete="new-password">
+            <button type="button" class="au-toggle-pass" id="signupTogglePass" aria-label="Show password"><i class="fa-solid fa-eye"></i></button>
+          </div>
+          <div class="au-strength" id="signupStrength"><span></span><span></span><span></span><span></span></div>
+          <span class="au-strength-label" id="signupStrengthLabel"></span>
+          <p class="au-error-msg"><i class="fa-solid fa-circle-exclamation"></i> <span></span></p>
+        </div>
+
+        <div class="auth-field" id="signupConfirmField">
+          <label for="signupConfirm">Confirm password</label>
+          <div class="auth-input-wrap">
+            <i class="fa-solid fa-lock au-lead"></i>
+            <input type="password" id="signupConfirm" placeholder="Re-enter your password" autocomplete="new-password">
+          </div>
+          <p class="au-error-msg"><i class="fa-solid fa-circle-exclamation"></i> <span></span></p>
+        </div>
+
+        <div class="auth-options">
+          <label class="auth-check"><input type="checkbox" checked> I agree to the Terms &amp; Privacy Policy</label>
+        </div>
+
+        <button type="submit" class="auth-submit" id="signupSubmit">
+          <span class="au-btn-text">Create account</span>
+          <span class="au-spinner"></span>
+        </button>
+      </form>
+
+      <div class="auth-divider">or continue with</div>
+      <div class="auth-social-row">
+  <button type="button" class="auth-social-btn" onclick="window.location.href='404.html'">
+    <i class="fa-brands fa-google"></i> Google
+  </button>
+
+  <button type="button" class="auth-social-btn" onclick="window.location.href='404.html'">
+    <i class="fa-brands fa-apple"></i> Apple
+  </button>
+</div>
+
+
+      <!-- success state — shown after account is created, then auto-redirects to login -->
+      <div class="auth-success">
+        <svg viewBox="0 0 52 52" class="au-check-ring">
+          <circle cx="26" cy="26" r="24"></circle>
+          <path d="M14 27l8 8 16-16"></path>
+        </svg>
+        <h3>Account created</h3>
+        <p>Taking you to the login page…</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

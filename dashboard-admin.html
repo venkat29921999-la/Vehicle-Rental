@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Dashboard — Stackly</title>
+<meta name="robots" content="noindex">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="app.css">
+</head>
+<body class="dash-body" data-role="admin">
+
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<div class="dash-overlay" id="dashOverlay"></div>
+
+<div class="dash-shell">
+
+  <!-- ================= SIDEBAR ================= -->
+  <aside class="dash-sidebar" id="dashSidebar">
+    <div class="dash-side-logo">
+      <a href="dashboard-admin.html" class="dash-side-logo-link">
+  <img src="Assest/logo-bone.webp" alt="Stackly logo">
+</a>
+      <span class="dash-side-role"><i class="fa-solid fa-user-shield"></i> Admin</span>
+    </div>
+
+    <nav class="dash-nav">
+      <div class="dash-nav-indicator" id="dashNavIndicator"></div>
+      <a href="#" class="active" data-section="overview" data-label="Overview"><i class="fa-solid fa-gauge-high"></i> Overview</a>
+      <a href="#" data-section="inbox" data-label="Inbox"><i class="fa-solid fa-inbox"></i> Inbox <span class="dash-unread-badge" data-unread-count></span></a>
+      <a href="#" data-section="bookings" data-label="Bookings"><i class="fa-solid fa-calendar-check"></i> Bookings</a>
+      <a href="#" data-section="fleet" data-label="Fleet"><i class="fa-solid fa-car"></i> Fleet</a>
+      <a href="#" data-section="customers" data-label="Customers"><i class="fa-solid fa-users"></i> Customers</a>
+      <a href="#" data-section="reports" data-label="Reports"><i class="fa-solid fa-chart-line"></i> Reports</a>
+      <a href="#" data-section="settings" data-label="Settings"><i class="fa-solid fa-gear"></i> Settings</a>
+    </nav>
+
+    <div class="dash-side-foot">
+      <div class="dash-side-user">
+        <div class="dash-avatar-ring"><span data-user-initial>A</span></div>
+        <div>
+          <strong data-user-name>Admin</strong>
+          <span data-user-email>admin@stackly.example</span>
+        </div>
+      </div>
+      <button class="dash-logout" data-logout><i class="fa-solid fa-right-from-bracket"></i> Log out</button>
+    </div>
+  </aside>
+
+  <!-- ================= MAIN ================= -->
+  <div class="dash-main">
+    <header class="dash-topbar">
+      <button class="dash-hamburger" id="dashHamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+      <div class="dash-search">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input
+    type="text"
+    placeholder="Search bookings, customers, vehicles…"
+    onkeydown="if(event.key === 'Enter' && this.value.trim() !== '') window.location.href='404.html'"
+  >
+</div>
+
+      <div class="dash-topbar-right">
+  <button
+    class="dash-bell"
+    aria-label="Notifications"
+    type="button"
+    onclick="window.location.href='404.html'"
+  >
+    <i class="fa-regular fa-bell"></i>
+  </button>
+
+  <div
+    class="dash-topbar-avatar"
+    onclick="window.location.href='404.html'"
+    style="cursor: pointer;"
+  >
+    <span data-user-initial>A</span>
+  </div>
+</div>
+
+    </header>
+
+    <div class="dash-content">
+      <div class="dash-welcome">
+        <h1>Welcome back, <span data-user-first>Admin</span> 👋</h1>
+        <p>Here's what's happening across the fleet today.</p>
+      </div>
+
+      <!-- stat cards -->
+      <div class="dash-stats-grid">
+        <div class="dash-stat-card">
+          <span class="dash-stat-trend up"><i class="fa-solid fa-arrow-trend-up"></i> 12.4%</span>
+          <div class="dash-stat-icon"><i class="fa-solid fa-sack-dollar"></i></div>
+          <h3 data-count="482300" data-prefix="₹">0</h3>
+          <p>Revenue this month</p>
+          <div class="dash-stat-bar"><span data-pct="82"></span></div>
+        </div>
+        <div class="dash-stat-card">
+          <span class="dash-stat-trend up"><i class="fa-solid fa-arrow-trend-up"></i> 6.1%</span>
+          <div class="dash-stat-icon"><i class="fa-solid fa-car-side"></i></div>
+          <h3 data-count="184">0</h3>
+          <p>Active rentals</p>
+          <div class="dash-stat-bar"><span data-pct="64"></span></div>
+        </div>
+        <div class="dash-stat-card">
+          <span class="dash-stat-trend down"><i class="fa-solid fa-arrow-trend-down"></i> 2.3%</span>
+          <div class="dash-stat-icon"><i class="fa-solid fa-gauge"></i></div>
+          <h3 data-count="78" data-suffix="%">0</h3>
+          <p>Fleet utilization</p>
+          <div class="dash-stat-bar"><span data-pct="78"></span></div>
+        </div>
+        <div class="dash-stat-card">
+          <span class="dash-stat-trend up"><i class="fa-solid fa-arrow-trend-up"></i> 18.9%</span>
+          <div class="dash-stat-icon"><i class="fa-solid fa-user-plus"></i></div>
+          <h3 data-count="46">0</h3>
+          <p>New signups (7 days)</p>
+          <div class="dash-stat-bar"><span data-pct="70"></span></div>
+        </div>
+      </div>
+
+      <!-- ---------- OVERVIEW PANEL ---------- -->
+      <section class="dash-panel active" id="panel-overview">
+        <div class="dash-overview-grid">
+          <div class="dash-section-card">
+            <div class="dash-section-head">
+              <div><h2>Recent activity</h2><p>Live feed across bookings and the fleet desk</p></div>
+            </div>
+            <div class="dash-activity-row">
+              <div class="dash-activity-icon"><i class="fa-solid fa-car"></i></div>
+              <div><strong>New booking — SUV, Bengaluru</strong><span>Rohan Das booked a Mahindra XUV700 for 3 days</span></div>
+              <div class="dash-activity-time">4m ago</div>
+            </div>
+            <div class="dash-activity-row">
+              <div class="dash-activity-icon"><i class="fa-solid fa-building"></i></div>
+              <div><strong>Corporate account approved</strong><span>Nimbus Logistics Pvt. Ltd. — 12 vehicle fleet plan</span></div>
+              <div class="dash-activity-time">38m ago</div>
+            </div>
+            <div class="dash-activity-row">
+              <div class="dash-activity-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
+              <div><strong>Vehicle flagged for service</strong><span>TN-09-BK-2214 due for inspection in Chennai hub</span></div>
+              <div class="dash-activity-time">1h ago</div>
+            </div>
+            <div class="dash-activity-row">
+              <div class="dash-activity-icon"><i class="fa-solid fa-star"></i></div>
+              <div><strong>New 5-star review</strong><span>Aarav Mehta rated a Mumbai one-way trip</span></div>
+              <div class="dash-activity-time">2h ago</div>
+            </div>
+            <div class="dash-activity-row">
+              <div class="dash-activity-icon"><i class="fa-solid fa-user-plus"></i></div>
+              <div><strong>3 new signups</strong><span>Two in Chennai, one in Pune — all standard accounts</span></div>
+              <div class="dash-activity-time">3h ago</div>
+            </div>
+          </div>
+
+          <div class="dash-section-card">
+            <div class="dash-section-head"><div><h2>Fleet health</h2><p>Key operational signals</p></div></div>
+            <div class="dash-mini-progress">
+              <div><span>Fleet uptime</span><span>94%</span></div>
+              <div class="bar"><span data-pct="94"></span></div>
+            </div>
+            <div class="dash-mini-progress">
+              <div><span>Support SLA met</span><span>88%</span></div>
+              <div class="bar"><span data-pct="88"></span></div>
+            </div>
+            <div class="dash-mini-progress">
+              <div><span>Payment success rate</span><span>97%</span></div>
+              <div class="bar"><span data-pct="97"></span></div>
+            </div>
+            <div class="dash-mini-progress">
+              <div><span>On-time handovers</span><span>81%</span></div>
+              <div class="bar"><span data-pct="81"></span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ---------- INBOX PANEL (dynamic) ---------- -->
+      <section class="dash-panel" id="panel-inbox">
+        <div class="dash-section-card">
+          <div class="dash-section-head">
+            <div><h2>Inbox</h2><p>Rendered dynamically from your message queue</p></div>
+          </div>
+          <div class="dash-inbox-toolbar">
+            <div class="dash-inbox-tabs">
+              <button class="active" data-tab="all">All</button>
+              <button data-tab="unread">Unread</button>
+              <button data-tab="flagged">Flagged</button>
+            </div>
+            <div class="dash-inbox-search">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <input type="text" id="dashInboxSearch" placeholder="Search mail…">
+            </div>
+          </div>
+          <div class="dash-email-list" id="dashEmailList"></div>
+        </div>
+      </section>
+
+      <!-- ---------- BOOKINGS PANEL ---------- -->
+      <section class="dash-panel" id="panel-bookings">
+        <div class="dash-section-card">
+          <div class="dash-section-head">
+            <div><h2>Bookings</h2><p>Every active and past rental across the fleet</p></div>
+          </div>
+          <div class="dash-inbox-toolbar">
+            <div class="dash-inbox-tabs" data-filter-tabs="bookingsList">
+              <button class="active" data-filter="all">All</button>
+              <button data-filter="active">Active</button>
+              <button data-filter="completed">Completed</button>
+              <button data-filter="cancelled">Cancelled</button>
+            </div>
+          </div>
+          <div class="dash-list" id="bookingsList">
+            <div class="dash-list-row" data-status="active">
+              <div class="dash-list-icon"><i class="fa-solid fa-car"></i></div>
+              <div class="dash-list-main"><strong>Mahindra XUV700 — Rohan Das</strong><span>Booking #ST20481 · Bengaluru</span></div>
+              <div class="dash-list-meta">12–15 Sep</div>
+              <div class="dash-list-right"><span class="dash-amount">₹9,600</span><span class="dash-badge ok">Active</span></div>
+            </div>
+            <div class="dash-list-row" data-status="active">
+              <div class="dash-list-icon"><i class="fa-solid fa-car"></i></div>
+              <div class="dash-list-main"><strong>Hyundai Creta — Venkatalakshmi R</strong><span>Booking #ST20477 · OMR Chennai</span></div>
+              <div class="dash-list-meta">18–20 Sep</div>
+              <div class="dash-list-right"><span class="dash-amount">₹3,240</span><span class="dash-badge ok">Active</span></div>
+            </div>
+            <div class="dash-list-row" data-status="completed">
+              <div class="dash-list-icon"><i class="fa-solid fa-car"></i></div>
+              <div class="dash-list-main"><strong>Maruti Baleno — Kavya Nair</strong><span>Booking #ST20402 · Kochi</span></div>
+              <div class="dash-list-meta">2–4 Sep</div>
+              <div class="dash-list-right"><span class="dash-amount">₹2,997</span><span class="dash-badge info">Completed</span></div>
+            </div>
+            <div class="dash-list-row" data-status="completed">
+              <div class="dash-list-icon"><i class="fa-solid fa-car"></i></div>
+              <div class="dash-list-main"><strong>BMW 4 Series — Aarav Mehta</strong><span>Booking #ST20388 · Mumbai</span></div>
+              <div class="dash-list-meta">28–30 Aug</div>
+              <div class="dash-list-right"><span class="dash-amount">₹12,998</span><span class="dash-badge info">Completed</span></div>
+            </div>
+            <div class="dash-list-row" data-status="cancelled">
+              <div class="dash-list-icon"><i class="fa-solid fa-car"></i></div>
+              <div class="dash-list-main"><strong>Hyundai i20 — Priya Raman</strong><span>Booking #ST20375 · Chennai</span></div>
+              <div class="dash-list-meta">21 Aug</div>
+              <div class="dash-list-right"><span class="dash-amount">₹1,199</span><span class="dash-badge bad">Cancelled</span></div>
+            </div>
+            <div class="dash-list-row" data-status="completed">
+              <div class="dash-list-icon"><i class="fa-solid fa-car"></i></div>
+              <div class="dash-list-main"><strong>Range Rover Evoque — Nimbus Logistics</strong><span>Booking #ST20360 · Bengaluru</span></div>
+              <div class="dash-list-meta">10–17 Aug</div>
+              <div class="dash-list-right"><span class="dash-amount">₹41,993</span><span class="dash-badge info">Completed</span></div>
+            </div>
+            <div class="dash-list-row" data-status="active">
+              <div class="dash-list-icon"><i class="fa-solid fa-car"></i></div>
+              <div class="dash-list-main"><strong>Mercedes C-Class — Divya Krishnan</strong><span>Booking #ST20481 · Hyderabad</span></div>
+              <div class="dash-list-meta">19–22 Sep</div>
+              <div class="dash-list-right"><span class="dash-amount">₹12,897</span><span class="dash-badge ok">Active</span></div>
+            </div>
+            <div class="dash-list-row" data-status="completed">
+              <div class="dash-list-icon"><i class="fa-solid fa-car"></i></div>
+              <div class="dash-list-main"><strong>Tata Nexon EV — Arjun Rao</strong><span>Booking #ST20341 · Coimbatore</span></div>
+              <div class="dash-list-meta">3–5 Aug</div>
+              <div class="dash-list-right"><span class="dash-amount">₹3,198</span><span class="dash-badge info">Completed</span></div>
+            </div>
+            <div class="dash-list-row" data-status="cancelled">
+              <div class="dash-list-icon"><i class="fa-solid fa-car"></i></div>
+              <div class="dash-list-main"><strong>Van &amp; Cargo — Meera Nair</strong><span>Booking #ST20329 · Madurai</span></div>
+              <div class="dash-list-meta">29 Jul</div>
+              <div class="dash-list-right"><span class="dash-amount">₹2,899</span><span class="dash-badge bad">Cancelled</span></div>
+            </div>
+            <div class="dash-list-row" data-status="completed">
+              <div class="dash-list-icon"><i class="fa-solid fa-car"></i></div>
+              <div class="dash-list-main"><strong>Maruti Baleno — Sanya Iyer</strong><span>Booking #ST20301 · Chennai</span></div>
+              <div class="dash-list-meta">14–16 Jul</div>
+              <div class="dash-list-right"><span class="dash-amount">₹2,997</span><span class="dash-badge info">Completed</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ---------- FLEET PANEL ---------- -->
+      <section class="dash-panel" id="panel-fleet">
+        <div class="dash-section-card">
+          <div class="dash-section-head">
+            <div><h2>Fleet</h2><p>Live status across every vehicle in the network</p></div>
+          </div>
+          <div class="dash-inbox-toolbar">
+            <div class="dash-inbox-tabs" data-filter-tabs="fleetList">
+              <button class="active" data-filter="all">All</button>
+              <button data-filter="available">Available</button>
+              <button data-filter="ontrip">On trip</button>
+              <button data-filter="service">In service</button>
+            </div>
+          </div>
+          <div class="dash-list" id="fleetList">
+            <div class="dash-list-row" data-status="ontrip">
+              <div class="dash-list-icon"><i class="fa-solid fa-car-side"></i></div>
+              <div class="dash-list-main"><strong>Mahindra XUV700</strong><span>TN-09-BK-2214 · Chennai hub</span></div>
+              <div class="dash-list-meta">92% utilized</div>
+              <div class="dash-list-right"><span class="dash-badge ok">On trip</span></div>
+            </div>
+            <div class="dash-list-row" data-status="service">
+              <div class="dash-list-icon"><i class="fa-solid fa-car-side"></i></div>
+              <div class="dash-list-main"><strong>Hyundai Creta</strong><span>KA-05-MX-7710 · Bengaluru hub</span></div>
+              <div class="dash-list-meta">Due Fri</div>
+              <div class="dash-list-right"><span class="dash-badge warn">In service</span></div>
+            </div>
+            <div class="dash-list-row" data-status="available">
+              <div class="dash-list-icon"><i class="fa-solid fa-car-side"></i></div>
+              <div class="dash-list-main"><strong>Maruti Baleno</strong><span>TN-22-CJ-4410 · Coimbatore hub</span></div>
+              <div class="dash-list-meta">61% utilized</div>
+              <div class="dash-list-right"><span class="dash-badge info">Available</span></div>
+            </div>
+            <div class="dash-list-row" data-status="ontrip">
+              <div class="dash-list-icon"><i class="fa-solid fa-car-side"></i></div>
+              <div class="dash-list-main"><strong>BMW 4 Series</strong><span>MH-12-QT-3391 · Mumbai hub</span></div>
+              <div class="dash-list-meta">88% utilized</div>
+              <div class="dash-list-right"><span class="dash-badge ok">On trip</span></div>
+            </div>
+            <div class="dash-list-row" data-status="available">
+              <div class="dash-list-icon"><i class="fa-solid fa-car-side"></i></div>
+              <div class="dash-list-main"><strong>Hyundai i20</strong><span>TN-07-AZ-9981 · Chennai hub</span></div>
+              <div class="dash-list-meta">54% utilized</div>
+              <div class="dash-list-right"><span class="dash-badge info">Available</span></div>
+            </div>
+            <div class="dash-list-row" data-status="ontrip">
+              <div class="dash-list-icon"><i class="fa-solid fa-car-side"></i></div>
+              <div class="dash-list-main"><strong>Range Rover Evoque</strong><span>KA-01-HN-1187 · Bengaluru hub</span></div>
+              <div class="dash-list-meta">95% utilized</div>
+              <div class="dash-list-right"><span class="dash-badge ok">On trip</span></div>
+            </div>
+            <div class="dash-list-row" data-status="service">
+              <div class="dash-list-icon"><i class="fa-solid fa-car-side"></i></div>
+              <div class="dash-list-main"><strong>Tata Nexon EV</strong><span>TN-38-ER-2205 · Coimbatore hub</span></div>
+              <div class="dash-list-meta">Charging fault</div>
+              <div class="dash-list-right"><span class="dash-badge warn">In service</span></div>
+            </div>
+            <div class="dash-list-row" data-status="available">
+              <div class="dash-list-icon"><i class="fa-solid fa-car-side"></i></div>
+              <div class="dash-list-main"><strong>Mercedes C-Class</strong><span>TG-09-BR-4471 · Hyderabad hub</span></div>
+              <div class="dash-list-meta">70% utilized</div>
+              <div class="dash-list-right"><span class="dash-badge info">Available</span></div>
+            </div>
+            <div class="dash-list-row" data-status="available">
+              <div class="dash-list-icon"><i class="fa-solid fa-car-side"></i></div>
+              <div class="dash-list-main"><strong>Maruti Baleno</strong><span>TN-19-GK-1023 · Madurai hub</span></div>
+              <div class="dash-list-meta">45% utilized</div>
+              <div class="dash-list-right"><span class="dash-badge info">Available</span></div>
+            </div>
+            <div class="dash-list-row" data-status="ontrip">
+              <div class="dash-list-icon"><i class="fa-solid fa-car-side"></i></div>
+              <div class="dash-list-main"><strong>Van &amp; Cargo</strong><span>KL-07-PS-6602 · Kochi hub</span></div>
+              <div class="dash-list-meta">80% utilized</div>
+              <div class="dash-list-right"><span class="dash-badge ok">On trip</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ---------- CUSTOMERS PANEL ---------- -->
+      <section class="dash-panel" id="panel-customers">
+        <div class="dash-section-card">
+          <div class="dash-section-head">
+            <div><h2>Customers</h2><p>Most recently active renters and corporate accounts</p></div>
+          </div>
+          <div class="dash-list">
+            <div class="dash-list-row">
+              <div class="dash-list-icon circle">RD</div>
+              <div class="dash-list-main"><strong>Rohan Das</strong><span>rohan.das@example.com</span></div>
+              <div class="dash-list-meta">14 trips · Joined 2023</div>
+              <div class="dash-list-right"><span class="dash-badge warn">Gold</span></div>
+            </div>
+            <div class="dash-list-row">
+              <div class="dash-list-icon circle">VR</div>
+              <div class="dash-list-main"><strong>Venkatalakshmi R</strong><span>venkat29921999@gmail.com</span></div>
+              <div class="dash-list-meta">27 trips · Joined 2022</div>
+              <div class="dash-list-right"><span class="dash-badge warn">Gold</span></div>
+            </div>
+            <div class="dash-list-row">
+              <div class="dash-list-icon circle">KN</div>
+              <div class="dash-list-main"><strong>Kavya Nair</strong><span>kavya.nair@example.com</span></div>
+              <div class="dash-list-meta">3 trips · Joined this year</div>
+              <div class="dash-list-right"><span class="dash-badge info">New</span></div>
+            </div>
+            <div class="dash-list-row">
+              <div class="dash-list-icon circle">AM</div>
+              <div class="dash-list-main"><strong>Aarav Mehta</strong><span>aarav.mehta@example.com</span></div>
+              <div class="dash-list-meta">19 trips · Joined 2023</div>
+              <div class="dash-list-right"><span class="dash-badge warn">Gold</span></div>
+            </div>
+            <div class="dash-list-row">
+              <div class="dash-list-icon circle">NL</div>
+              <div class="dash-list-main"><strong>Nimbus Logistics Pvt. Ltd.</strong><span>fleet@nimbuslogistics.example</span></div>
+              <div class="dash-list-meta">12-vehicle corporate plan</div>
+              <div class="dash-list-right"><span class="dash-badge ok">Corporate</span></div>
+            </div>
+            <div class="dash-list-row">
+              <div class="dash-list-icon circle">PR</div>
+              <div class="dash-list-main"><strong>Priya Raman</strong><span>priya.raman@example.com</span></div>
+              <div class="dash-list-meta">6 trips · Joined 2024</div>
+              <div class="dash-list-right"><span class="dash-badge info">Silver</span></div>
+            </div>
+            <div class="dash-list-row">
+              <div class="dash-list-icon circle">SI</div>
+              <div class="dash-list-main"><strong>Sanya Iyer</strong><span>sanya.iyer@example.com</span></div>
+              <div class="dash-list-meta">9 trips · Joined 2024</div>
+              <div class="dash-list-right"><span class="dash-badge info">Silver</span></div>
+            </div>
+            <div class="dash-list-row">
+              <div class="dash-list-icon circle">AR</div>
+              <div class="dash-list-main"><strong>Arjun Rao</strong><span>arjun.rao@example.com</span></div>
+              <div class="dash-list-meta">31 trips · Joined 2021</div>
+              <div class="dash-list-right"><span class="dash-badge warn">Gold</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ---------- REPORTS PANEL ---------- -->
+      <section class="dash-panel" id="panel-reports">
+        <div class="dash-section-card">
+          <div class="dash-section-head"><div><h2>Monthly performance</h2><p>Revenue and trip volume for the last 12 months</p></div></div>
+          <div class="dash-list">
+            <div class="dash-list-row"><div class="dash-list-icon"><i class="fa-solid fa-calendar"></i></div><div class="dash-list-main"><strong>September 2026</strong><span>214 completed trips</span></div><div class="dash-list-right"><span class="dash-amount">₹4,82,300</span><span class="dash-badge ok">+12.4%</span></div></div>
+            <div class="dash-list-row"><div class="dash-list-icon"><i class="fa-solid fa-calendar"></i></div><div class="dash-list-main"><strong>August 2026</strong><span>198 completed trips</span></div><div class="dash-list-right"><span class="dash-amount">₹4,29,150</span><span class="dash-badge ok">+8.1%</span></div></div>
+            <div class="dash-list-row"><div class="dash-list-icon"><i class="fa-solid fa-calendar"></i></div><div class="dash-list-main"><strong>July 2026</strong><span>187 completed trips</span></div><div class="dash-list-right"><span class="dash-amount">₹3,97,020</span><span class="dash-badge ok">+5.6%</span></div></div>
+            <div class="dash-list-row"><div class="dash-list-icon"><i class="fa-solid fa-calendar"></i></div><div class="dash-list-main"><strong>June 2026</strong><span>176 completed trips</span></div><div class="dash-list-right"><span class="dash-amount">₹3,76,004</span><span class="dash-badge bad">−2.3%</span></div></div>
+            <div class="dash-list-row"><div class="dash-list-icon"><i class="fa-solid fa-calendar"></i></div><div class="dash-list-main"><strong>May 2026</strong><span>182 completed trips</span></div><div class="dash-list-right"><span class="dash-amount">₹3,84,760</span><span class="dash-badge ok">+3.9%</span></div></div>
+            <div class="dash-list-row"><div class="dash-list-icon"><i class="fa-solid fa-calendar"></i></div><div class="dash-list-main"><strong>April 2026</strong><span>169 completed trips</span></div><div class="dash-list-right"><span class="dash-amount">₹3,70,410</span><span class="dash-badge ok">+1.2%</span></div></div>
+            <div class="dash-list-row"><div class="dash-list-icon"><i class="fa-solid fa-calendar"></i></div><div class="dash-list-main"><strong>March 2026</strong><span>165 completed trips</span></div><div class="dash-list-right"><span class="dash-amount">₹3,65,900</span><span class="dash-badge bad">−1.8%</span></div></div>
+            <div class="dash-list-row"><div class="dash-list-icon"><i class="fa-solid fa-calendar"></i></div><div class="dash-list-main"><strong>February 2026</strong><span>172 completed trips</span></div><div class="dash-list-right"><span class="dash-amount">₹3,72,650</span><span class="dash-badge ok">+6.4%</span></div></div>
+            <div class="dash-list-row"><div class="dash-list-icon"><i class="fa-solid fa-calendar"></i></div><div class="dash-list-main"><strong>January 2026</strong><span>158 completed trips</span></div><div class="dash-list-right"><span class="dash-amount">₹3,50,220</span><span class="dash-badge ok">+4.0%</span></div></div>
+            <div class="dash-list-row"><div class="dash-list-icon"><i class="fa-solid fa-calendar"></i></div><div class="dash-list-main"><strong>December 2025</strong><span>201 completed trips</span></div><div class="dash-list-right"><span class="dash-amount">₹4,10,880</span><span class="dash-badge ok">+15.2%</span></div></div>
+            <div class="dash-list-row"><div class="dash-list-icon"><i class="fa-solid fa-calendar"></i></div><div class="dash-list-main"><strong>November 2025</strong><span>149 completed trips</span></div><div class="dash-list-right"><span class="dash-amount">₹3,32,410</span><span class="dash-badge bad">−4.5%</span></div></div>
+            <div class="dash-list-row"><div class="dash-list-icon"><i class="fa-solid fa-calendar"></i></div><div class="dash-list-main"><strong>October 2025</strong><span>163 completed trips</span></div><div class="dash-list-right"><span class="dash-amount">₹3,48,900</span><span class="dash-badge ok">+2.7%</span></div></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ---------- SETTINGS PANEL ---------- -->
+      <section class="dash-panel" id="panel-settings">
+        <div class="dash-section-card">
+          <div class="dash-section-head"><div><h2>Account settings</h2><p>Update your admin profile</p></div></div>
+          <div class="dash-settings-grid">
+            <div class="dash-field"><label>Full name</label><input type="text" data-user-name-input value=""></div>
+            <div class="dash-field"><label>Email</label><input type="email" data-user-email-input value="" disabled></div>
+            <div class="dash-field"><label>Phone</label><input type="text" placeholder="+91 98400 00000"></div>
+            <div class="dash-field">
+              <label>Notification preference</label>
+              <select><option>All updates</option><option>Bookings only</option><option>Critical alerts only</option></select>
+            </div>
+          </div>
+<button
+  class="dash-save-btn"
+  type="button"
+  onclick="window.location.href='404.html'">
+  Save changes
+</button>        </div>
+      </section>
+
+      <!-- ---------- GENERIC "COMING SOON" PANEL (fallback for any future nav item) ---------- -->
+      <section class="dash-panel dash-soon-panel" id="dashSoonPanel">
+        <i class="fa-solid fa-screwdriver-wrench"></i>
+        <h2><span id="dashSoonTitle">This module</span> is coming soon</h2>
+        <p>We're still building this part of the console. Everything else here is fully live.</p>
+      </section>
+    </div>
+  </div>
+</div>
+
+<script>
+  /* dynamic inbox data — rendered entirely by app.js, not hard-coded markup */
+  window.STK_EMAILS = [
+    { sender: 'Nimbus Logistics', tag: 'Corporate', time: '9:14 AM', unread: true, flagged: true,
+      subject: 'Fleet partnership — 12 vehicle request', snippet: 'Following up on the corporate plan we discussed last week…',
+      body: 'Following up on the corporate plan we discussed last week — we would like to move ahead with a 12-vehicle allocation for our Chennai logistics team starting next month. Could you share the onboarding checklist and billing cycle options?' },
+    { sender: 'Priya Raman', tag: 'Support', time: '8:47 AM', unread: true, flagged: false,
+      subject: 'Refund request — booking #ST20481', snippet: 'The vehicle had a flat tyre within an hour of pickup…',
+      body: 'The vehicle had a flat tyre within an hour of pickup and support was slow to respond. I would like a partial refund or credit for the inconvenience. Booking reference is ST20481.' },
+    { sender: 'System Alerts', tag: 'System', time: 'Yesterday', unread: true, flagged: false,
+      subject: '3 vehicles due for inspection this week', snippet: 'TN-09-BK-2214, KA-05-MX-7710 and MH-12-QT-3391 are flagged…',
+      body: 'The following vehicles are due for scheduled inspection this week: TN-09-BK-2214 (Chennai hub), KA-05-MX-7710 (Bengaluru hub) and MH-12-QT-3391 (Mumbai hub). Please assign a technician slot before Friday.' },
+    { sender: 'Rohan Das', tag: 'Booking', time: 'Yesterday', unread: false, flagged: false,
+      subject: 'Extending my SUV booking by 2 days', snippet: 'Loving the XUV700 so far — could I extend the trip?',
+      body: 'Loving the XUV700 so far — could I extend the trip by 2 more days? Happy to pay the difference on the same card used for the original booking.' },
+    { sender: 'Kavya Nair', tag: 'Careers', time: 'Mon', unread: false, flagged: true,
+      subject: 'Fleet partner application — Kochi', snippet: 'I run a 6-car rental operation in Kochi and would like to list…',
+      body: 'I run a small 6-car rental operation in Kochi and would like to explore listing our vehicles on the Stackly platform. Could someone from the partnerships team reach out?' },
+    { sender: 'Billing Desk', tag: 'Finance', time: 'Mon', unread: false, flagged: false,
+      subject: 'Monthly payout summary — ready for review', snippet: 'Your October payout summary has been generated and is ready…',
+      body: 'Your October payout summary has been generated and is ready for review. Total payouts across all active fleet partners this cycle: ₹18,42,600 across 214 completed trips.' }
+  ];
+</script>
+<script src="app.js"></script>
+</body>
+</html>
