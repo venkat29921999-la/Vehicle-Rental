@@ -834,24 +834,28 @@ document.addEventListener('DOMContentLoaded', () => {
     const blCards = document.querySelectorAll('.bl-card');
     const blEmpty = document.getElementById('blEmptyState');
 
-    function moveLiquid(target) {
-      if (!pillLiquid || !target) return;
-      const railRect = pillRail.getBoundingClientRect();
-      const btnRect = target.getBoundingClientRect();
-      const x = btnRect.left - railRect.left;
-      const w = btnRect.width;
-      if (window.gsap) {
-        gsap.to(pillLiquid, {
-          x, width: w, opacity: 1, duration: 0.5, ease: 'power3.out',
-          borderRadius: '40% 60% 55% 45% / 50% 45% 55% 50%'
-        });
-        gsap.to(pillLiquid, { borderRadius: '999px', duration: 0.35, delay: 0.5, ease: 'power2.out' });
-      } else {
-        pillLiquid.style.transform = `translateX(${x}px)`;
-        pillLiquid.style.width = w + 'px';
-        pillLiquid.style.opacity = 1;
-      }
-    }
+   function moveLiquid(target) {
+  if (!pillLiquid || !target) return;
+  const railRect = pillRail.getBoundingClientRect();
+  const btnRect = target.getBoundingClientRect();
+  const x = btnRect.left - railRect.left;
+  const y = btnRect.top - railRect.top;
+  const w = btnRect.width;
+  const h = btnRect.height;
+  if (window.gsap) {
+    gsap.to(pillLiquid, {
+      x, y, width: w, height: h, opacity: 1, duration: 0.5, ease: 'power3.out',
+      borderRadius: '40% 60% 55% 45% / 50% 45% 55% 50%'
+    });
+    gsap.to(pillLiquid, { borderRadius: '999px', duration: 0.35, delay: 0.5, ease: 'power2.out' });
+  } else {
+    pillLiquid.style.transform = `translate(${x}px, ${y}px)`;
+    pillLiquid.style.width = w + 'px';
+    pillLiquid.style.height = h + 'px';
+    pillLiquid.style.opacity = 1;
+  }
+}
+
     function filterCards(filter) {
       let visible = 0;
       blCards.forEach((card, i) => {

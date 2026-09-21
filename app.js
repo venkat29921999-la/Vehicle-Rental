@@ -122,43 +122,25 @@ document.addEventListener('DOMContentLoaded', () => {
       f?.querySelector('input').addEventListener('input', () => stkClearFieldError(f));
     });
 
-    loginForm.addEventListener('submit', e => {
-      e.preventDefault();
-      let valid = true;
-      const email = emailInput.value.trim();
-      const password = passInput.value;
+  loginForm.addEventListener('submit', e => {
+  e.preventDefault();
 
-      stkClearFieldError(emailField);
-      stkClearFieldError(passField);
+  const email = emailInput.value.trim();
+  const password = passInput.value.trim();
 
-      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-        stkSetFieldError(emailField, 'Enter a valid email address');
-        valid = false;
-      }
-      if (!password) {
-        stkSetFieldError(passField, 'Password is required');
-        valid = false;
-      }
-      if (!valid) return;
+  stkClearFieldError(emailField);
+  stkClearFieldError(passField);
 
-      const users = stkGetUsers();
-      const match = users.find(u => u.email.toLowerCase() === email.toLowerCase());
+  const submitBtn = document.getElementById('loginSubmit');
+  submitBtn.classList.add('au-loading');
 
-      if (!match || match.password !== password) {
-        stkSetFieldError(passField, 'Email or password is incorrect');
-        return;
-      }
-
-      const submitBtn = document.getElementById('loginSubmit');
-      submitBtn.classList.add('au-loading');
-
-      /* The Admin/User tab picked on this screen decides which dashboard to
-         open — not whatever role the account was originally signed up with. */
-      stkSetSession({ name: match.name, email: match.email, role: selectedRole });
-      setTimeout(() => {
-        window.location.href = selectedRole === 'admin' ? 'dashboard-admin.html' : 'dashboard-user.html';
-      }, 550);
-    });
+  /* No validation, no matching against saved accounts — whatever was
+     typed goes straight in, routed by the Admin/User tab selected here. */
+  stkSetSession({ name: email || 'Guest', email: email || 'guest@stackly.example', role: selectedRole });
+  setTimeout(() => {
+    window.location.href = selectedRole === 'admin' ? 'dashboard-admin.html' : 'dashboard-user.html';
+  }, 550);
+});
   }
 
   /* =========================================================
@@ -219,7 +201,7 @@ document.addEventListener('DOMContentLoaded', () => {
       let valid = true;
       const name = nameInput.value.trim();
       const email = emailInput.value.trim();
-      const password = passInput.value;
+      const password = passInput.value.trim();
       const confirm = confirmInput.value;
 
       [nameField, emailField, passField, confirmField].forEach(stkClearFieldError);
